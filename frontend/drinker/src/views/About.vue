@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Swiper from "../components/Swiper";
+import Swiper from "../components/SwiperScreen";
 export default {
   components: { Swiper }
 };

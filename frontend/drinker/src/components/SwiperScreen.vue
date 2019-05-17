@@ -3,11 +3,20 @@
     <Tinder :queue.sync="queue">
       <template slot-scope="{ data }">
         <div class="card-container">
-          <div class="info">
+          <div class="info" @click="openFullInfo = !openFullInfo">
             <h1 class="name">{{ data.firstname }}, {{ data.age }}</h1>
             <div class="description">{{ data.description }}</div>
           </div>
-          <div class="pic" :style="`background-image:url(${data.photo})`"></div>
+          <div
+            class="pic"
+            :style="`background-image:url(${data.photos[0]})`"
+          ></div>
+          <FullInfo :user="data" v-if="openFullInfo === true"></FullInfo>
+          <!--          <swiper class="swiper" :options="swiperOption" ref="mySwiper">-->
+          <!--            <swiper-slide v-for="(photo, index) in data.photos"-->
+          <!--              ><div class="pic" :style="`background-image:url(${photo})`"></div-->
+          <!--            ></swiper-slide>-->
+          <!--          </swiper>-->
         </div>
       </template>
       <img
@@ -45,21 +54,23 @@
 
 <script>
 import Tinder from "vue-tinder";
+import FullInfo from "./FullInfo";
 
 export default {
-  name: "Swiper",
-  components: {
-    Tinder
-  },
+  name: "SwiperScreen",
+  components: { FullInfo, Tinder },
   data: () => ({
+    openFullInfo: false,
     queue: [
       {
         id: 1,
         key: 1,
         firstname: "Иосиф",
         age: 20,
-        photo:
+        photos: [
           "https://pp.userapi.com/c849320/v849320266/165685/wXs4GZAmLUE.jpg",
+          "https://sun1-30.userapi.com/c543101/v543101522/25e86/eImlQtjBvGg.jpg"
+        ],
         description: "Люблю сидр и котиков"
       },
       {
@@ -67,8 +78,10 @@ export default {
         key: 2,
         firstname: "Катя",
         age: 22,
-        photo:
+        photos: [
           "https://pp.userapi.com/c848628/v848628728/d0c32/ZCaQ29kujSA.jpg",
+          "https://sun1-30.userapi.com/c543101/v543101522/25e86/eImlQtjBvGg.jpg"
+        ],
         description: "Люблю сидр и котиков"
       },
       {
@@ -76,8 +89,10 @@ export default {
         key: 3,
         firstname: "Андрей",
         age: 24,
-        photo:
+        photos: [
           "https://pp.userapi.com/c623900/v623900438/118e59/OTQhAWwF_jM.jpg",
+          "https://sun1-30.userapi.com/c543101/v543101522/25e86/eImlQtjBvGg.jpg"
+        ],
         description: "Люблю сидр и котиков"
       }
     ]
@@ -85,8 +100,12 @@ export default {
   created() {
     // this.getData();
   },
-  computed: {},
+  computed: {
+  },
   methods: {
+    getActiveIndex: swiper => {
+      this.active = swiper.activeIndex;
+    },
     // getData() {
     //   const list = [];
     //   for (let i = 0; i < 200; i++) {
@@ -117,6 +136,10 @@ export default {
 </script>
 
 <style scoped>
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 .card-container {
   display: flex;
   align-items: flex-end;
