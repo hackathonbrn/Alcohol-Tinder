@@ -6,6 +6,17 @@ public class Edge {
     private int meetingCount;
     private double rate;
 
+    public Edge() {
+
+    }
+
+    public Edge(int id1, int id2) {
+        this.user1 = id1;
+        this.user2 = id2;
+        this.meetingCount = 0;
+        this.rate = 0;
+    }
+
     public int getUser1() {
         return user1;
     }
