@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Match></Match>
     <div id="nav">
       <router-link to="/profile">Профиль</router-link> |
       <router-link to="/">Поиск</router-link> |
@@ -10,6 +11,10 @@
 </template>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
 * {
   box-sizing: border-box;
 }
@@ -33,3 +38,9 @@
   color: #42b983;
 }
 </style>
+<script>
+import Match from "./components/Match";
+export default {
+  components: { Match }
+};
+</script>
