@@ -3,6 +3,7 @@ package com.Drinker.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "user", schema = "public")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,23 +13,24 @@ public class User {
     private String firstName;
 
     @Column(name = "secondname")
-    private String secondname;
+    private String secondName;
 
-    @Column(name = "phonenumber")
+    @Column(name = "phone")
     private String phone;
 
-    private Double mark;
+    private Double rating;
 
     private String photo;
+
 
     public User() {
     }
 
-    public User(String firstName, String secondname, String phone, Double mark, String photo) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo) {
         this.firstName = firstName;
-        this.secondname = secondname;
+        this.secondName = secondName;
         this.phone = phone;
-        this.mark = mark;
+        this.rating = rating;
         this.photo = photo;
     }
 
@@ -48,12 +50,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getSecondname() {
-        return secondname;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSecondname(String secondname) {
-        this.secondname = secondname;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getPhone() {
@@ -64,12 +66,12 @@ public class User {
         this.phone = phone;
     }
 
-    public Double getMark() {
-        return mark;
+    public Double getRating() {
+        return rating;
     }
 
-    public void setMark(Double mark) {
-        this.mark = mark;
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public String getPhoto() {
