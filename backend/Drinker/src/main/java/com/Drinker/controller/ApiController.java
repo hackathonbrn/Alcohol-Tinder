@@ -16,17 +16,17 @@ public class ApiController {
     private UserRepo userRepo;
 
     @PostMapping("/getQueue")
-    public List<Object> getQueue(@RequestParam Long userId) {
+    public List<User> getQueue(@RequestParam Long userId) {
         return new ArrayList<>();
     }
 
     @PostMapping("/getUser")
-    public Object getUser(@RequestParam Long userId) {
-        return new Object();
+    public User getUser(@RequestParam Long userId) {
+        return userRepo.findById(userId).get();
     }
 
     @GetMapping("/getUser/{id}")
-    public User getU(@PathVariable Long id) {
+    public User getU(@PathVariable("id") Long id) {
         return userRepo.findById(id).get();
     }
 
