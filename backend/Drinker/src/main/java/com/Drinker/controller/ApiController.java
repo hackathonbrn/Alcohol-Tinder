@@ -116,9 +116,11 @@ public class ApiController {
         return user;
     }
 
+    @CrossOrigin(origins = "192.168.1.172")
     @PostMapping("/like")
-    public void checkMatch(String userPair) {
+    public void checkMatch(@RequestBody String userPair) {
         JSONObject jsonUserPair = new JSONObject(userPair);
+        System.out.println(userPair);
 
         Long userId1 = (Long) jsonUserPair.get("user1");
         Long userId2 = (Long) jsonUserPair.get("user2");
