@@ -1,6 +1,8 @@
 package com.Drinker.controller;
 
+import com.Drinker.model.Group;
 import com.Drinker.model.User;
+import com.Drinker.repository.GroupRepo;
 import com.Drinker.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,9 @@ public class ApiController {
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private GroupRepo groupRepo;
+
     @PostMapping("/getQueue")
     public List<User> getQueue(@RequestParam Long userId) {
         return new ArrayList<>();
@@ -27,7 +32,8 @@ public class ApiController {
 
     @GetMapping("/getUser/{id}")
     public User getU(@PathVariable("id") Long id) {
-        return userRepo.findById(id).get();
+        User user = userRepo.findById(id).get();
+        return user;
     }
 
 }

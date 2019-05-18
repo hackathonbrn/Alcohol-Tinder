@@ -1,6 +1,7 @@
 package com.Drinker.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user", schema = "public")
@@ -22,8 +23,21 @@ public class User {
 
     private String photo;
 
+    @ElementCollection(targetClass = Alcohol.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "alcoholid"))
+    private List<User> alcohol;
+
 
     public User() {
+    }
+
+    public User(String firstName, String secondName, String phone, Double rating, String photo, List<User> alcohol) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.phone = phone;
+        this.rating = rating;
+        this.photo = photo;
+        this.alcohol = alcohol;
     }
 
     public User(String firstName, String secondName, String phone, Double rating, String photo) {
@@ -80,5 +94,13 @@ public class User {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public List<User> getAlcohol() {
+        return alcohol;
+    }
+
+    public void setAlcohol(List<User> alcohol) {
+        this.alcohol = alcohol;
     }
 }
