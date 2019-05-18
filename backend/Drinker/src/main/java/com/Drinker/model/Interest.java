@@ -1,11 +1,9 @@
 package com.Drinker.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "interest", schema = "public")
 public class Interest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
