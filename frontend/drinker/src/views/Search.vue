@@ -1,8 +1,6 @@
 <template>
   <div class="search">
-    <el-header>Header</el-header>
     <el-main class="main"><Swipe /><wave></wave></el-main>
-    <el-footer>Footer</el-footer>
   </div>
 </template>
 <script>

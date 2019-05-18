@@ -1,8 +1,6 @@
 <template>
   <div>
-    <el-header>Header</el-header>
     <el-main class="main"><SwiperScreen /><wave></wave></el-main>
-    <el-footer>Footer</el-footer>
   </div>
 </template>
 

@@ -18,10 +18,15 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 h1 {
+  color: #20262e;
   margin-left: 10px;
 }
 .match {
+  padding: 10px;
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -33,7 +38,11 @@ h1 {
   height: 50px;
 }
 a.router-link-exact-active .match {
-  color: #42b983;
+  color: #fff;
   background-color: #b88782;
+}
+
+a.router-link-exact-active .match h1{
+  color: #fff;
 }
 </style>

@@ -19,16 +19,6 @@
             <h1 class="name">{{ data.firstname }}, {{ data.age }}</h1>
             <div class="description">{{ data.description }}</div>
           </div>
-          <!--          <FullInfo-->
-          <!--            :user="data"-->
-          <!--            v-if="openFullInfo === true"-->
-          <!--            @click="openFullInfo = !openFullInfo"-->
-          <!--          ></FullInfo>-->
-          <!--          <swiper class="swiper" :options="swiperOption" ref="mySwiper">-->
-          <!--            <swiper-slide v-for="(photo, index) in data.photos"-->
-          <!--              ><div class="pic" :style="`background-image:url(${photo})`"></div-->
-          <!--            ></swiper-slide>-->
-          <!--          </swiper>-->
         </div>
         <div>
           <div

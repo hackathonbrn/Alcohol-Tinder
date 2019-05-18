@@ -1,10 +1,15 @@
 <template>
   <div id="aside">
-    <router-link :to="{name: 'profile'}">
+    <router-link :to="{ name: 'profile' }">
       <div class="nav">
-          <router-link :to="{name: 'search'}">
-          <span v-if="$route.name === 'profile'">назад</span>
-          </router-link>
+        <router-link :to="{ name: 'search' }">
+          <span v-if="$route.name === 'profile'"
+            ><i
+              class="el-icon-arrow-left
+"
+            ></i
+          ></span>
+        </router-link>
         <div
           class="photo"
           v-bind:style="{ 'background-image': 'url(' + user.photos[0] + ')' }"
@@ -34,12 +39,18 @@ export default {
 <style scoped>
 h1 {
   margin-left: 10px;
+  color: #fff;
+}
+i {
+  color: #fff;
 }
 #aside {
   height: 100vh;
+  color: #fff;
 }
 .nav {
   height: 80px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -48,7 +59,7 @@ h1 {
   left: 0;
   height: 80px;
   width: 400px;
-  background-color: #b86841;
+  background-color: #30364a;
 }
 .photo {
   width: 50px;
