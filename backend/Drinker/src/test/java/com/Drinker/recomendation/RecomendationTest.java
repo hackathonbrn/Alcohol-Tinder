@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class RecomendationTest {
     @Test
@@ -21,7 +20,8 @@ public class RecomendationTest {
         graph.addPare(2, 4);
         graph.addPare(2, 1);
         graph.addPare(2, 5);
-        ArrayList<Integer> expected = graph.getFirstStageNeighbour(2);
+        RecomendationKernel recomendationKernel = new RecomendationKernel(graph);
+        ArrayList<Integer> expected = recomendationKernel.getFirstStageNeighbour(2);
         ArrayList<Integer> actual = new ArrayList<>();
         actual.add(3);
         actual.add(4);
@@ -41,7 +41,8 @@ public class RecomendationTest {
         graph.addPare(2, 6); graph.addPare(6, 2);
         graph.addPare(4, 6); graph.addPare(6, 4);
         graph.addPare(4, 7); graph.addPare(7, 4);
-        HashMap<Integer, Integer> recomendedPeople = graph.getRecomendation(1);
+        RecomendationKernel recomendationKernel = new RecomendationKernel(graph);
+        HashMap<Integer, Integer> recomendedPeople = recomendationKernel.getRecomendation(1);
         System.out.println(recomendedPeople.toString());
     }
 }
