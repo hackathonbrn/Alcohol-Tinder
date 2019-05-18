@@ -1,15 +1,16 @@
 package com.Drinker.controller;
 
 import com.Drinker.model.Group;
+import com.Drinker.model.Match;
 import com.Drinker.model.Place;
 import com.Drinker.model.User;
 import com.Drinker.repository.GroupRepo;
+import com.Drinker.repository.MatchRepo;
 import com.Drinker.repository.PlaceRepo;
 import com.Drinker.repository.UserRepo;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -27,6 +28,9 @@ public class ApiController {
 
     @Autowired
     private GroupRepo groupRepo;
+
+    @Autowired
+    private MatchRepo matchRepo;
 
     @PostMapping("/getQueue")
     public List<User> getQueue(@RequestParam Long userId) {
@@ -110,5 +114,26 @@ public class ApiController {
 
         userRepo.save(user);
         return user;
+    }
+
+    @PostMapping("/like")
+    public void checkMatch(String userPair) {
+        JSONObject jsonUserPair = new JSONObject(userPair);
+
+        Long userId1 = (Long) jsonUserPair.get("user1");
+        Long userId2 = (Long) jsonUserPair.get("user2");
+
+
+        User user1 = userRepo.findById(userId1).get();
+        User user2 = userRepo.findById(userId2).get();
+
+        Match foundMatch = matchRepo.findByUser2AndUser1(user2, user1);
+
+        if (foundMatch == null)
+        {
+            Match newMatch = new Match(user1, user2, false);
+            matchRepo.save(newMatch);
+        }
+        else foundMatch.setMutual(true);
     }
 }
