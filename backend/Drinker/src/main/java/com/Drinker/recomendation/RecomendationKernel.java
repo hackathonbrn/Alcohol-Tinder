@@ -1,9 +1,21 @@
 package com.Drinker.recomendation;
 
+import com.Drinker.model.Alcohol;
+import com.Drinker.model.User;
+import com.Drinker.repository.AlcoholRepo;
+import com.Drinker.repository.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.*;
 
 public class RecomendationKernel {
     private Graph graph;
+
+    @Autowired
+    private UserRepo userRepo;
+
+    @Autowired
+    private AlcoholRepo alcoholRepo;
 
     public void setGraph(Graph graph) {
         this.graph = graph;
@@ -11,6 +23,10 @@ public class RecomendationKernel {
 
     public RecomendationKernel(Graph graph) {
         this.graph = graph;
+    }
+
+    public RecomendationKernel() {
+
     }
 
     public boolean checkFirstStageInclude(ArrayList<Integer> firstStage, int targetNeighbour) {
@@ -32,6 +48,7 @@ public class RecomendationKernel {
         return result;
     }
 
+    // поиск рекомендаций по друзьям
     public HashMap<Integer, Integer> getRecomendation(int target) {
         ArrayList<Integer> fiirstNeighbours = getFirstStageNeighbour(target);
         // получен список первых соседей, теперь требуется выявить среди них кандидатов
@@ -54,6 +71,7 @@ public class RecomendationKernel {
         return candidate;
     }
 
+    // получение упорядоченного по убыванию списка собутыльников
     public List<HashMap<Integer, Integer>> getSortedRecomendations(int target) {
         HashMap<Integer, Integer> allRecomend = getRecomendation(target);
         List list = new ArrayList(allRecomend.entrySet());
@@ -66,6 +84,42 @@ public class RecomendationKernel {
         });
         return list;
     }
+
+    public List<HashMap<Integer, Integer>> getRecomendationByDrink(int target) {
+        User targetUser = userRepo.findById(Long.valueOf(target)).get();
+        List<Integer> allUserAlcohol = targetUser.getAlcohol();
+
+        Iterable<User> allUsers = userRepo.findAll();
+        // начинаем обход всех юзеров
+        for (User concreteUser: allUsers) {
+            if (concreteUser.getId() == targetUser.getId()) {
+                continue;
+            }
+            List<Integer> concreteAlcoholList = concreteUser.getAlcohol();
+
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param concreteAlcoholList - список напитков юзера из последовательного обхода
+     * @param targetAlcohollist - список напитков юзера, совпадения для которого мы ищем
+     * @return
+     */
+    private int getCountOfMatches(List<Integer> concreteAlcoholList, List<Integer> targetAlcohollist) {
+        int countOfMatches = 0;
+        for (int targetAlcolol: targetAlcohollist) {
+            for (int concreteAlcohol: concreteAlcoholList) {
+                if (targetAlcolol == concreteAlcohol) {
+                    countOfMatches++;
+                    concreteAlcoholList.remove(concreteAlcohol);
+                }
+            }
+        }
+        return countOfMatches;
+    }
+
 
 
 }
