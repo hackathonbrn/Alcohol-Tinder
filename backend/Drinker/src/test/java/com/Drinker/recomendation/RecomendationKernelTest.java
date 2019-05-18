@@ -3,8 +3,10 @@ package com.Drinker.recomendation;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class RecomendationKernelTest {
 
@@ -27,6 +29,23 @@ public class RecomendationKernelTest {
         RecomendationKernel recomendationKernel = new RecomendationKernel();
 
         assertEquals(recomendationKernel.getCountOfMatches(targetList, concreteList), 3);
+    }
 
+    @Test
+    public void transformToListTest() {
+        HashMap<Integer, Integer> testMap = new HashMap<>();
+        testMap.put(10, 10);
+        testMap.put(9, 10);
+        testMap.put(8, 10);
+
+        RecomendationKernel recomendationKernel = new RecomendationKernel();
+        List<Integer> testList = recomendationKernel.transformMapToList(testMap);
+
+        List<Integer> actualList = new ArrayList<>();
+        actualList.add(8);
+        actualList.add(9);
+        actualList.add(10);
+
+        assertEquals(testList, actualList);
     }
 }

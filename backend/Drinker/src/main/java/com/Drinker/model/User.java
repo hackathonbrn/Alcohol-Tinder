@@ -69,7 +69,7 @@ public class User {
         this.photo = photo;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 

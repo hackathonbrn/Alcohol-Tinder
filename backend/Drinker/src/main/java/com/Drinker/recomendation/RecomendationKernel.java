@@ -77,37 +77,30 @@ public class RecomendationKernel {
     }
 
     // получение упорядоченного по убыванию списка собутыльников
-    public HashMap<Integer, Integer> getSortedRecomendations(int target) {
+    public List<Integer> getSortedRecomendations(int target) {
         HashMap<Integer, Integer> allRecomend = getRecomendation(target);
-        HashMap<Integer, Integer> sortedRecomend = allRecomend
+        HashMap<Integer, Integer> sortedRecomend = sortingDownList(allRecomend);
+
+        return transformMapToList(sortedRecomend);
+    }
+
+    // сортировка мапы по убыванию
+    public HashMap<Integer, Integer> sortingDownList(HashMap<Integer, Integer> sourceMap) {
+        HashMap<Integer, Integer> sortedHashik  = sourceMap
                 .entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                 .collect(
                         toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2)->e2, LinkedHashMap::new)
                 );
-
-        return sortedRecomend;
+        return sortedHashik;
     }
 
-    public List<Integer> sortingDownList(HashMap<Integer, Integer> sourseMap) {
-        List list = new ArrayList(sourseMap.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
-            @Override
-            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
-                return o2.getValue() - o1.getValue();
-            }
-        });
-        List<Integer> sortedHashik  = new ArrayList<>();
-//        for (Ha)
-        return null;
-
-    }
-
-    public List<HashMap<Integer, Integer>> getRecomendationByDrink(int target) {
+    // поиск рекомендаций по напиткам
+    public List<Integer> getRecomendationByDrink(int target) {
+        HashMap<Integer, Integer> resultUnsort = new HashMap<>();
         User targetUser = userRepo.findById(Long.valueOf(target)).get();
         List<Integer> allUserAlcohol = targetUser.getAlcohol();
-
         Iterable<User> allUsers = userRepo.findAll();
         // начинаем обход всех юзеров
         for (User concreteUser: allUsers) {
@@ -116,12 +109,24 @@ public class RecomendationKernel {
             }
             List<Integer> concreteAlcoholList = concreteUser.getAlcohol();
             int countOfMatches = getCountOfMatches(concreteAlcoholList, allUserAlcohol);
-
+            // сохраним в итоговую мапу
+            resultUnsort.put(concreteUser.getId(), countOfMatches);
         }
-        return null;
+        List<Integer> sortedListRecomendation = transformMapToList(resultUnsort);
+        return sortedListRecomendation;
+    }
+
+    // получение списка ключей из мапы в том же порядке
+    public List<Integer> transformMapToList(HashMap<Integer, Integer> source) {
+        ArrayList<Integer> sortedList = new ArrayList<>();
+        for (Integer key: source.keySet()) {
+            sortedList.add(key);
+        }
+        return sortedList;
     }
 
     /**
+     * Получения количества совпадений в листах
      * @param concreteAlcoholList - целочисленный список, integer список напитков юзера из последовательного обхода
      * @param targetAlcohollist - целочисленный список, список напитков юзера, совпадения для которого мы ищем
      * @return - количество совпадений
@@ -130,7 +135,7 @@ public class RecomendationKernel {
         int countOfMatches = 0;
         for (int i = 0; i < targetAlcohollist.size(); i++ ) {
             for (int j = 0; j < concreteAlcoholList.size(); j++) {
-                if (targetAlcohollist.get(i) == concreteAlcoholList.get(j)) {
+                if (targetAlcohollist.get(i).equals(concreteAlcoholList.get(j))) {
                     countOfMatches++;
                     concreteAlcoholList.remove(j);
                     j--;
