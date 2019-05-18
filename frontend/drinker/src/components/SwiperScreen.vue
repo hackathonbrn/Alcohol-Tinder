@@ -53,6 +53,67 @@
             <div>
               Увлечения
             </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>
+              Напитки
+            </div>
+            <div>
+              Увлечения
+            </div>
+            <div>Парашут</div>
           </div>
         </div>
       </template>
@@ -173,6 +234,7 @@ export default {
 
 <style scoped>
 .full-info {
+  overflow-y: auto;
   padding: 10px;
   position: absolute;
   z-index: -1;
@@ -200,6 +262,7 @@ export default {
   height: 100%;
 }
 .info {
+  background: linear-gradient(0, #2c3e50, #3330);
   position: absolute;
   padding: 10px;
   color: #fff;

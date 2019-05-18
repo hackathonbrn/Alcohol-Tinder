@@ -3,7 +3,65 @@
     <h1>{{ user.firstname }}, {{ user.age }}</h1>
     <div class="description">Люблю сидр и котиков</div>
     <br />
+
+
+
     <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
+      Напитки
+    </div>
+    <div>
+      Увлечения
+    </div>    <div>
       Напитки
     </div>
     <div>

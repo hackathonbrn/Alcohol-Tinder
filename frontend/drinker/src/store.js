@@ -5,6 +5,144 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    user: {
+      id: 100,
+      firstname: "Николай",
+      age: 25,
+      photos: [
+        "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      ],
+      matches: [
+        {
+          id: 101,
+          firstname: "Николай",
+          age: 25,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 103,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 104,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 105,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 106,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 107,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 108,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        },
+        {
+          id: 102,
+          firstname: "Петр",
+          age: 27,
+          photos: [
+            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          ]
+        }
+      ]
+    },
     queue: [
       {
         id: 1,
