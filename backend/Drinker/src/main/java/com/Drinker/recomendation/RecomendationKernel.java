@@ -1,7 +1,6 @@
 package com.Drinker.recomendation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class RecomendationKernel {
     private Graph graph;
@@ -54,4 +53,19 @@ public class RecomendationKernel {
         }
         return candidate;
     }
+
+    public List<Integer> getSortedRecomendations(int target) {
+        HashMap<Integer, Integer> allRecomend = getRecomendation(target);
+        List list = new ArrayList(allRecomend.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+
+            @Override
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });
+        return list;
+    }
+
+
 }
