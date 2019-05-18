@@ -33,13 +33,13 @@ public class ApiController {
     private MatchRepo matchRepo;
 
     @PostMapping("/getQueue")
-    public List<User> getQueue(@RequestParam Long userId) {
+    public List<User> getQueue(@RequestParam Integer userId) {
         return new ArrayList<>();
     }
 
     @CrossOrigin(origins = "http://192.168.1.91:8080")
     @GetMapping("/getUser/{id}")
-    public User getUser(@PathVariable("id") Long id) {
+    public User getUser(@PathVariable("id") Integer id) {
         return userRepo.findById(id).get();
     }
 
@@ -50,9 +50,9 @@ public class ApiController {
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
         String phone = (String) jsonUser.get("phone");
-        ArrayList<Long> alco = (ArrayList<Long>) jsonUser.get("alco");
-        ArrayList<Long> interests = (ArrayList<Long>) jsonUser.get("interest");
-        ArrayList<Long> places = (ArrayList<Long>) jsonUser.get("place");
+        ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
+        ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
+        ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
 
 
         User user = new User(firstName, secondName, phone, 5.0, "file", alco, interests, places);
@@ -67,7 +67,7 @@ public class ApiController {
         Date date = (Date) jsonGroup.get("date");
         String name = (String) jsonGroup.get("name");
         String comment = (String) jsonGroup.get("comment");
-        Long placeId = (Long) jsonGroup.get("place");
+        Integer placeId = (Integer) jsonGroup.get("place");
         Place place = placeRepo.findById(placeId).get();
 
         Group group = new Group(date, name, comment, place);
@@ -79,7 +79,7 @@ public class ApiController {
     public void addUserToGroup(String groupAndUsers) {
         JSONObject jsonGroupAndUsers = new JSONObject(groupAndUsers);
 
-        Long groupId = (Long) jsonGroupAndUsers.get("groupId");
+        Integer groupId = (Integer) jsonGroupAndUsers.get("groupId");
         Group group = groupRepo.findById(groupId).get();
 
         ArrayList<Long> newUsers = (ArrayList<Long>) jsonGroupAndUsers.get("userIds");
@@ -95,13 +95,13 @@ public class ApiController {
     @PostMapping("/updateUser")
     public User updateUser(String newInfoUser) {
         JSONObject jsonUser = new JSONObject(newInfoUser);
-        Long userId = jsonUser.getLong("id");
+        Integer userId = jsonUser.getInt("id");
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
         String phone = (String) jsonUser.get("phone");
-        ArrayList<Long> alco = (ArrayList<Long>) jsonUser.get("alco");
-        ArrayList<Long> interests = (ArrayList<Long>) jsonUser.get("interest");
-        ArrayList<Long> places = (ArrayList<Long>) jsonUser.get("place");
+        ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
+        ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
+        ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
 
 
         User user = userRepo.findById(userId).get();
@@ -122,14 +122,14 @@ public class ApiController {
         JSONObject jsonUserPair = new JSONObject(userPair);
         System.out.println(userPair);
 
-        Long userId1 = (Long) jsonUserPair.get("user1");
-        Long userId2 = (Long) jsonUserPair.get("user2");
+        Integer userId1 = (Integer) jsonUserPair.get("user1");
+        Integer userId2 = (Integer) jsonUserPair.get("user2");
 
 
         User user1 = userRepo.findById(userId1).get();
         User user2 = userRepo.findById(userId2).get();
 
-        Match foundMatch = matchRepo.findByUser2AndUser1(user2, user1);
+        Match foundMatch = matchRepo.findByUser2AndUser1(user1, user2);
 
         if (foundMatch == null)
         {

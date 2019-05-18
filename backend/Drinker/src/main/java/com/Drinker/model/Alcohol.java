@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Alcohol {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     private String name;
 
@@ -21,11 +21,11 @@ public class Alcohol {
         this.vol = vol;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
