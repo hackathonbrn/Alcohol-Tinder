@@ -4,10 +4,7 @@ import com.Drinker.model.Group;
 import com.Drinker.model.Match;
 import com.Drinker.model.Place;
 import com.Drinker.model.User;
-import com.Drinker.repository.GroupRepo;
-import com.Drinker.repository.MatchRepo;
-import com.Drinker.repository.PlaceRepo;
-import com.Drinker.repository.UserRepo;
+import com.Drinker.repository.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +16,9 @@ import java.util.List;
 @RestController()
 @RequestMapping("/api")
 public class ApiController {
+
+    @Autowired
+    private AlcoholRepo alcoholRepo;
 
     @Autowired
     private UserRepo userRepo;
@@ -135,5 +135,9 @@ public class ApiController {
             matchRepo.save(newMatch);
         }
         else foundMatch.setMutual(true);
+    }
+
+    @PostMapping("/addPhoto")
+    public void addPhotoToUser() {
     }
 }
