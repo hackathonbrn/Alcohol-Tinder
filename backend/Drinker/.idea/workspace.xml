@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cb8b5f1-d0a1-4ff8-9725-947a91150ec0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/RecomendationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/RecomendationTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -377,7 +374,7 @@
       <option name="presentableId" value="Default" />
       <updated>1558107075323</updated>
       <workItem from="1558107078776" duration="2340000" />
-      <workItem from="1558111103944" duration="13834000" />
+      <workItem from="1558111103944" duration="14363000" />
     </task>
     <task id="LOCAL-00001" summary="create test package for recomendation">
       <created>1558111744192</created>
@@ -414,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558156690726</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Exclude Recomendation kernel in individual class">
+      <created>1558157525536</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558157525536</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -447,7 +451,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16174000" />
+    <option name="totallyTimeSpent" value="16703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="129" width="1920" height="1053" extended-state="6" />
@@ -498,7 +502,8 @@
     <MESSAGE value="create addEdge test" />
     <MESSAGE value="add finding firstStage neighbours" />
     <MESSAGE value="create finding drinking companion" />
-    <option name="LAST_COMMIT_MESSAGE" value="create finding drinking companion" />
+    <MESSAGE value="Exclude Recomendation kernel in individual class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exclude Recomendation kernel in individual class" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/Application.java">
