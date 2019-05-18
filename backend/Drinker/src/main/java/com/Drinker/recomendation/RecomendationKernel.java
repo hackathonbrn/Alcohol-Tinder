@@ -1,12 +1,14 @@
 package com.Drinker.recomendation;
 
-import com.Drinker.model.Alcohol;
 import com.Drinker.model.User;
 import com.Drinker.repository.AlcoholRepo;
 import com.Drinker.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
+
+import static java.util.stream.Collectors.toMap;
+
 
 /**
  * класс, содержащий в себе методы для поиска юзеров, которые должны быть в предложке
@@ -75,17 +77,31 @@ public class RecomendationKernel {
     }
 
     // получение упорядоченного по убыванию списка собутыльников
-    public List<HashMap<Integer, Integer>> getSortedRecomendations(int target) {
+    public HashMap<Integer, Integer> getSortedRecomendations(int target) {
         HashMap<Integer, Integer> allRecomend = getRecomendation(target);
-        List list = new ArrayList(allRecomend.entrySet());
-        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
+        HashMap<Integer, Integer> sortedRecomend = allRecomend
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .collect(
+                        toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2)->e2, LinkedHashMap::new)
+                );
 
+        return sortedRecomend;
+    }
+
+    public List<Integer> sortingDownList(HashMap<Integer, Integer> sourseMap) {
+        List list = new ArrayList(sourseMap.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
             public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
                 return o2.getValue() - o1.getValue();
             }
         });
-        return list;
+        List<Integer> sortedHashik  = new ArrayList<>();
+//        for (Ha)
+        return null;
+
     }
 
     public List<HashMap<Integer, Integer>> getRecomendationByDrink(int target) {
@@ -95,17 +111,17 @@ public class RecomendationKernel {
         Iterable<User> allUsers = userRepo.findAll();
         // начинаем обход всех юзеров
         for (User concreteUser: allUsers) {
-            if (concreteUser.getId() == targetUser.getId()) {
+            if (concreteUser.getId().equals(targetUser.getId())) {
                 continue;
             }
             List<Integer> concreteAlcoholList = concreteUser.getAlcohol();
+            int countOfMatches = getCountOfMatches(concreteAlcoholList, allUserAlcohol);
 
         }
         return null;
     }
 
     /**
-     *
      * @param concreteAlcoholList - целочисленный список, integer список напитков юзера из последовательного обхода
      * @param targetAlcohollist - целочисленный список, список напитков юзера, совпадения для которого мы ищем
      * @return - количество совпадений
