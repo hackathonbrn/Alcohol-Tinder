@@ -26,33 +26,33 @@ public class User {
     @ElementCollection
     @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "userid"))
     @Column(name = "alcoholid")
-    private List<Integer> alcohol;
+    private List<Long> alcohol;
 
-//    @ElementCollection
-//    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
-//    @Column(name = "alcohointerestlid")
-//    private List<Integer> interests;
-//
-//    @ElementCollection
-//    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
-//    @Column(name = "placeid")
-//    private List<Integer> places;
+    @ElementCollection
+    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
+    @Column(name = "alcohointerestlid")
+    private List<Long> interests;
+
+    @ElementCollection
+    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
+    @Column(name = "placeid")
+    private List<Long> places;
 
     public User() {
     }
 
-//    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
-//        this.firstName = firstName;
-//        this.secondName = secondName;
-//        this.phone = phone;
-//        this.rating = rating;
-//        this.photo = photo;
-//        this.alcohol = alcohol;
-//        this.interests = interests;
-//        this.places = places;
-//    }
+    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Long> alcohol, List<Long> interests, List<Long> places) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.phone = phone;
+        this.rating = rating;
+        this.photo = photo;
+        this.alcohol = alcohol;
+        this.interests = interests;
+        this.places = places;
+    }
 
-    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Long> alcohol) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
@@ -117,27 +117,27 @@ public class User {
         this.photo = photo;
     }
 
-    public List<Integer> getAlcohol() {
+    public List<Long> getAlcohol() {
         return alcohol;
     }
 
-    public void setAlcohol(List<Integer> alcohol) {
+    public void setAlcohol(List<Long> alcohol) {
         this.alcohol = alcohol;
     }
 
-//    public List<Integer> getInterests() {
-//        return interests;
-//    }
-//
-//    public void setInterests(List<Integer> interests) {
-//        this.interests = interests;
-//    }
-//
-//    public List<Integer> getPlaces() {
-//        return places;
-//    }
-//
-//    public void setPlaces(List<Integer> places) {
-//        this.places = places;
-//    }
+    public List<Long> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<Long> interests) {
+        this.interests = interests;
+    }
+
+    public List<Long> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<Long> places) {
+        this.places = places;
+    }
 }
