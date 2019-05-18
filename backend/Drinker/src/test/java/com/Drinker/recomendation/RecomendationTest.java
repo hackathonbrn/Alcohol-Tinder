@@ -59,7 +59,7 @@ public class RecomendationTest {
         graph.addPare(4, 6); graph.addPare(6, 4);
         graph.addPare(4, 7); graph.addPare(7, 4);
         RecomendationKernel recomendationKernel = new RecomendationKernel(graph);
-        List<Integer> sortedRecomendation = recomendationKernel.getSortedRecomendations(1);
+        List<HashMap<Integer, Integer>> sortedRecomendation = recomendationKernel.getSortedRecomendations(1);
         System.out.println(sortedRecomendation.toString());
     }
 }
