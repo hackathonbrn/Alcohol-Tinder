@@ -78,7 +78,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 109,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -86,7 +86,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 110,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -94,7 +94,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 111,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -102,7 +102,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 112,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -110,7 +110,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 113,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -118,7 +118,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 114,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -126,7 +126,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 115,
           firstname: "Петр",
           age: 27,
           photos: [
@@ -134,7 +134,7 @@ export default new Vuex.Store({
           ]
         },
         {
-          id: 102,
+          id: 116,
           firstname: "Петр",
           age: 27,
           photos: [

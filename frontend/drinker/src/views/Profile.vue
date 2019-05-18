@@ -1,10 +1,10 @@
 <template>
-    <div>kk</div>
+    <h1>Профиль пользователя</h1>
 </template>
 
 <script>
     export default {
-        name: "User"
+        name: "Profile"
     }
 </script>
 

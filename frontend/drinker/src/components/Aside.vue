@@ -1,12 +1,17 @@
 <template>
   <div id="aside">
-    <div class="nav">
-      <div
-        class="photo"
-        v-bind:style="{ 'background-image': 'url(' + user.photos[0] + ')' }"
-      ></div>
-      <h1>Мой профиль</h1>
-    </div>
+    <router-link :to="{name: 'profile'}">
+      <div class="nav">
+          <router-link :to="{name: 'search'}">
+          <span v-if="$route.name === 'profile'">назад</span>
+          </router-link>
+        <div
+          class="photo"
+          v-bind:style="{ 'background-image': 'url(' + user.photos[0] + ')' }"
+        ></div>
+        <h1>Мой профиль</h1>
+      </div>
+    </router-link>
     <div class="matches">
       <OneMatch v-for="match in user.matches" :user="match"></OneMatch>
     </div>
@@ -27,13 +32,20 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin-left: 10px;
+}
 #aside {
   height: 100vh;
 }
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 80px;
   width: 400px;
   background-color: #b86841;

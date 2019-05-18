@@ -1,8 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-import Find from "./views/Find";
-import User from "./views/User";
+import Search from "./views/Search";
+import Matches from "./views/Matches";
+import Profile from "./views/Profile";
 
 Vue.use(Router);
 
@@ -11,19 +12,19 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/user/:id",
+      path: "/matches/:id",
       name: "user",
-      component: User
+      component: Matches
     },
     {
-      path: "/",
-      name: "find",
-      component: Find
+      path: "/search",
+      name: "search",
+      component: Search
     },
     {
       path: "/profile",
       name: "profile",
-      component: Home
+      component: Profile
     },
     {
       path: "/matches",
@@ -37,7 +38,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/Find.vue")
+        import(/* webpackChunkName: "about" */ "./views/Search.vue")
     }
   ]
 });
