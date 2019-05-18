@@ -25,13 +25,8 @@ public class ApiController {
         return new ArrayList<>();
     }
 
-    @PostMapping("/getUser")
-    public User getUser(@RequestParam Long userId) {
-        return userRepo.findById(userId).get();
-    }
-
     @GetMapping("/getUser/{id}")
-    public User getU(@PathVariable("id") Long id) {
+    public User getUser(@PathVariable("id") Long id) {
         return userRepo.findById(id).get();
     }
 
