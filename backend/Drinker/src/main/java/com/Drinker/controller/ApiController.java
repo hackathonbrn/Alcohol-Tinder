@@ -5,12 +5,15 @@ import com.Drinker.model.Match;
 import com.Drinker.model.Place;
 import com.Drinker.model.User;
 import com.Drinker.repository.*;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController()
@@ -32,20 +35,21 @@ public class ApiController {
     @Autowired
     private MatchRepo matchRepo;
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/getQueue")
-    public List<User> getQueue(@RequestParam Integer userId) {
+    public List<User> getQueue(@RequestBody Integer userId) {
         return new ArrayList<>();
     }
 
-    @CrossOrigin(origins = "http://192.168.1.91:8080")
+    @CrossOrigin(origins = "*")
     @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable("id") Integer id) {
         return userRepo.findById(id).get();
     }
 
-    @CrossOrigin(origins = "http://192.168.1.91:8080")
+    @CrossOrigin(origins = "*")
     @PostMapping("/createUser")
-    public User createUser(String newUser) {
+    public User createUser(@RequestBody String newUser) {
         JSONObject jsonUser = new JSONObject(newUser);
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
@@ -60,11 +64,19 @@ public class ApiController {
         return user;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/createGroup")
-    public Group createGroup(String newGroup) {
+    public Group createGroup(@RequestBody String newGroup) {
         JSONObject jsonGroup = new JSONObject(newGroup);
 
-        Date date = (Date) jsonGroup.get("date");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = format.parse(jsonGroup.getString("date"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         String name = (String) jsonGroup.get("name");
         String comment = (String) jsonGroup.get("comment");
         Integer placeId = (Integer) jsonGroup.get("place");
@@ -75,25 +87,29 @@ public class ApiController {
         return group;
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/addToGroup")
-    public void addUserToGroup(String groupAndUsers) {
+    public void addUserToGroup(@RequestBody String groupAndUsers) {
         JSONObject jsonGroupAndUsers = new JSONObject(groupAndUsers);
 
-        Integer groupId = (Integer) jsonGroupAndUsers.get("groupId");
+        Integer groupId = (Integer) jsonGroupAndUsers.get("group");
         Group group = groupRepo.findById(groupId).get();
 
-        ArrayList<Long> newUsers = (ArrayList<Long>) jsonGroupAndUsers.get("userIds");
+        JSONArray newUsers = jsonGroupAndUsers.getJSONArray("users");
+        List<Object> newUsersList = newUsers.toList();
 
-        ArrayList<Long> usersInGroup = (ArrayList<Long>) group.getUsers();
+        List<Integer> usersInGroup = group.getUsers();
 
-        usersInGroup.addAll(newUsers);
+        for (int i = 0; i < newUsersList.size(); i++)
+            usersInGroup.add((Integer) newUsersList.get(i));
 
         group.setUsers(usersInGroup);
         groupRepo.save(group);
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/updateUser")
-    public User updateUser(String newInfoUser) {
+    public User updateUser(@RequestBody String newInfoUser) {
         JSONObject jsonUser = new JSONObject(newInfoUser);
         Integer userId = jsonUser.getInt("id");
         String firstName = (String) jsonUser.get("firstName");
@@ -116,7 +132,7 @@ public class ApiController {
         return user;
     }
 
-    @CrossOrigin(origins = "192.168.1.172")
+    @CrossOrigin(origins = "*")
     @PostMapping("/like")
     public void checkMatch(@RequestBody String userPair) {
         JSONObject jsonUserPair = new JSONObject(userPair);
@@ -136,10 +152,17 @@ public class ApiController {
             Match newMatch = new Match(user1, user2, false);
             matchRepo.save(newMatch);
         }
-        else foundMatch.setMutual(true);
+        else
+        {
+            foundMatch.setMutual(true);
+            matchRepo.save(foundMatch);
+        }
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/addPhoto")
     public void addPhotoToUser() {
     }
+
+
 }
