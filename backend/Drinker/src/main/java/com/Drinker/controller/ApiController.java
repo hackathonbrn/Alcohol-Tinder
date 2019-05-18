@@ -87,4 +87,28 @@ public class ApiController {
         group.setUsers(usersInGroup);
         groupRepo.save(group);
     }
+
+    @PostMapping("/updateUser")
+    public User updateUser(String newInfoUser) {
+        JSONObject jsonUser = new JSONObject(newInfoUser);
+        Long userId = jsonUser.getLong("id");
+        String firstName = (String) jsonUser.get("firstName");
+        String secondName = (String) jsonUser.get("secondName");
+        String phone = (String) jsonUser.get("phone");
+        ArrayList<Long> alco = (ArrayList<Long>) jsonUser.get("alco");
+        ArrayList<Long> interests = (ArrayList<Long>) jsonUser.get("interest");
+        ArrayList<Long> places = (ArrayList<Long>) jsonUser.get("place");
+
+
+        User user = userRepo.findById(userId).get();
+        user.setFirstName(firstName);
+        user.setSecondName(secondName);
+        user.setPhone(phone);
+        user.setAlcohol(alco);
+        user.setInterests(interests);
+        user.setPlaces(places);
+
+        userRepo.save(user);
+        return user;
+    }
 }
