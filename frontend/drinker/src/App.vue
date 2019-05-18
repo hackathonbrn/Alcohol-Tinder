@@ -1,15 +1,7 @@
 <template>
   <div id="app">
-    <!--    <Match></Match>-->
-    <!--    <div id="nav">-->
-    <!--      <router-link to="/profile">Профиль</router-link> |-->
-    <!--      <router-link to="/">Поиск</router-link> |-->
-    <!--      <router-link to="/matches">Пары</router-link>-->
-    <!--    </div>-->
-    <!--    <router-view />-->
-
     <el-container>
-      <el-aside class="aside" width="400px"><Aside></Aside></el-aside>
+      <el-aside class="aside" width="400px"><Login></Login></el-aside>
       <el-container id="el-container">
         <router-view></router-view>
       </el-container>
@@ -17,6 +9,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  created() {
+    if (this.$localStorage.get("name") === undefined) {
+      this.$router.replace("login");
+    }
+  }
+};
+</script>
 <style>
 html {
 }
@@ -75,7 +77,8 @@ import Match from "./components/Match";
 import SwiperScreen from "./components/Swipe";
 import Wave from "./components/Wave";
 import Aside from "./components/Aside";
+import Login from "./components/User/Login";
 export default {
-  components: { Aside, Wave, SwiperScreen, Match }
+  components: {Login, Aside, Wave, SwiperScreen, Match }
 };
 </script>

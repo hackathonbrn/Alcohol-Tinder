@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Search from "./views/Search";
 import Matches from "./views/Matches";
 import Profile from "./views/Profile";
+import Regestration from "./views/Regestration";
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ export default new Router({
       path: "/matches",
       name: "matches",
       component: Home
+    },
+    {
+      path: "/User",
+      name: "reg",
+      component: Regestration
     },
     {
       path: "/",

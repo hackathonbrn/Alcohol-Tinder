@@ -10,7 +10,12 @@ import Swipe from "../components/Swipe";
 import Wave from "../components/Wave";
 export default {
   name: "Search",
-  components: {Wave, Swipe }
+  components: {Wave, Swipe },
+  created(){
+    this.axios.get('http://192.168.1.39:8080/api/getUser/1').then((response) => {
+      console.log(response.data)
+    })
+  }
 };
 </script>
 
