@@ -4,6 +4,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,12 +30,12 @@ public class Group {
     @ElementCollection
     @CollectionTable(name = "useringroup", joinColumns = @JoinColumn(name = "groupid"))
     @Column(name = "userid")
-    private List<Long> users;
+    private List<Integer> users;
 
     public Group() {
     }
 
-    public Group(Date date, String name, String comment, Place place, List<Long> users) {
+    public Group(Date date, String name, String comment, Place place, List<Integer> users) {
         this.date = date;
         this.name = name;
         this.comment = comment;
@@ -89,11 +90,11 @@ public class Group {
         this.place = place;
     }
 
-    public List<Long> getUsers() {
+    public List<Integer> getUsers() {
         return users;
     }
 
-    public void setUsers(List<Long> users) {
+    public void setUsers(List<Integer> users) {
         this.users = users;
     }
 }
