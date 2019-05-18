@@ -17,14 +17,4 @@ public class Graph {
     public List<Edge> getEdgeList() {
         return this.edgeList;
     }
-
-    public ArrayList<Integer> getFirstStageNeighbour(int target) {
-        ArrayList<Integer> result = new ArrayList<>();
-        for (Edge edge: edgeList) {
-            if (edge.getUser1() == target) {
-                result.add(edge.getUser2());
-            }
-        }
-        return result;
-    }
 }
