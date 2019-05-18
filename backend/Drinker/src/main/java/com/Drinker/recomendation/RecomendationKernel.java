@@ -4,6 +4,10 @@ import com.Drinker.model.User;
 import com.Drinker.repository.AlcoholRepo;
 import com.Drinker.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
@@ -77,7 +81,7 @@ public class RecomendationKernel {
     }
 
     // получение упорядоченного по убыванию списка собутыльников
-    public List<Integer> getSortedRecomendations(int target) {
+    public List<Integer> getSortedRecomendations(Integer target) {
         HashMap<Integer, Integer> allRecomend = getRecomendation(target);
         HashMap<Integer, Integer> sortedRecomend = sortingDownList(allRecomend);
 
@@ -97,11 +101,11 @@ public class RecomendationKernel {
     }
 
     // поиск рекомендаций по напиткам
-    public List<Integer> getRecomendationByDrink(int target) {
+    public List<Integer> getRecomendationByDrink(User targetUser, List<User> allUsers) {
         HashMap<Integer, Integer> resultUnsort = new HashMap<>();
-        User targetUser = userRepo.findById(Long.valueOf(target)).get();
+//        User targetUser = userRepo.findById(target).get();
         List<Integer> allUserAlcohol = targetUser.getAlcohol();
-        Iterable<User> allUsers = userRepo.findAll();
+//        Iterable<User> allUsers = userRepo.findAll();
         // начинаем обход всех юзеров
         for (User concreteUser: allUsers) {
             if (concreteUser.getId().equals(targetUser.getId())) {

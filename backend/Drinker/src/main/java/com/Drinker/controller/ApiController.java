@@ -4,6 +4,7 @@ import com.Drinker.model.Group;
 import com.Drinker.model.Match;
 import com.Drinker.model.Place;
 import com.Drinker.model.User;
+import com.Drinker.recomendation.RecomendationKernel;
 import com.Drinker.repository.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,10 +36,23 @@ public class ApiController {
     @Autowired
     private MatchRepo matchRepo;
 
+
     @CrossOrigin(origins = "*")
     @PostMapping("/getQueue")
-    public List<User> getQueue(@RequestBody Integer userId) {
-        return new ArrayList<>();
+    public List<User> getQueue(@RequestBody String user) {
+        RecomendationKernel recomendationKernel = new RecomendationKernel();
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+        User user1 = userRepo.findById(userId).get();
+        List<User> users = userRepo.findAll();
+        List<Integer> recomendationByDrink = recomendationKernel.getRecomendationByDrink(user1, users);
+
+        List<User> recommendedUsers = new ArrayList<>();
+        for (int i = 0; i < recomendationByDrink.size(); i++) {
+            User u = userRepo.findById(recomendationByDrink.get(i)).get();
+            recommendedUsers.add(u);
+        }
+        return recommendedUsers;
     }
 
     @CrossOrigin(origins = "*")
