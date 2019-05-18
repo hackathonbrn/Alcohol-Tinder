@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0cb8b5f1-d0a1-4ff8-9725-947a91150ec0" name="Default Changelist" comment="fix controller">
+    <list default="true" id="0cb8b5f1-d0a1-4ff8-9725-947a91150ec0" name="Default Changelist" comment="fix recommendation kernel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,7 +73,7 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="group: table" type="69fad909:PgImplModel$LocalTable" />
+        <item name="user: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -86,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="-111">
+              <caret line="131" column="45" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,6 +121,21 @@
                 <element signature="imports" expanded="true" />
                 <element signature="method#Group#1;class#Group#0" />
                 <element signature="e#1935#1936#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1402">
+              <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3384#3385#0" expanded="true" />
+                <element signature="e#3423#3424#0" expanded="true" />
+                <element signature="e#3453#3454#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,9 +178,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/repository/GroupRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/repository/PlaceRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/repository/UserRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/model/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java" />
       </list>
     </option>
@@ -285,7 +300,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558214201284" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558214822407" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -426,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558210789733</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix recommendation kernel">
+      <created>1558214221555</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1558214221555</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -435,10 +457,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33142000" />
+    <option name="totallyTimeSpent" value="34142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="70" y="27" width="1850" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19277778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -451,8 +474,8 @@
       <window_info anchor="bottom" id="Database Console" weight="0.32893288" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32893288" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39933994" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32893288" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -471,7 +494,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.4981685" visible="true" weight="0.32444444" />
+      <window_info active="true" anchor="right" id="Database" order="6" sideWeight="0.4981685" visible="true" weight="0.32444444" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -530,34 +553,29 @@
     <MESSAGE value="fix get json" />
     <MESSAGE value="change id type from long to int" />
     <MESSAGE value="fix controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix controller" />
+    <MESSAGE value="fix recommendation kernel" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix recommendation kernel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java</url>
-          <line>151</line>
+          <line>153</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java</url>
-          <line>83</line>
+          <line>84</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java</url>
-          <line>106</line>
+          <line>107</line>
           <properties />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -718,16 +736,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="139" column="38" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/model/Match.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -837,10 +845,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1402">
+          <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3384#3385#0" expanded="true" />
+            <element signature="e#3423#3424#0" expanded="true" />
+            <element signature="e#3453#3454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="-111">
+          <caret line="131" column="45" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

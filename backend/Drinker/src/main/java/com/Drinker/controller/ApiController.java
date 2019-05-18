@@ -68,6 +68,7 @@ public class ApiController {
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
         String phone = (String) jsonUser.get("phone");
+        Integer age = jsonUser.getInt("age");
         ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
         ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
         ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
@@ -128,6 +129,7 @@ public class ApiController {
         Integer userId = jsonUser.getInt("id");
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
+        Integer age = jsonUser.getInt("age");
         String phone = (String) jsonUser.get("phone");
         ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
         ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");

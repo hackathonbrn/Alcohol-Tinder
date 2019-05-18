@@ -23,6 +23,8 @@ public class User {
 
     private String photo;
 
+    private Integer age;
+
     @ElementCollection
     @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "userid"))
     @Column(name = "alcoholid")
@@ -52,21 +54,16 @@ public class User {
         this.places = places;
     }
 
-    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, Integer age, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
         this.rating = rating;
         this.photo = photo;
+        this.age = age;
         this.alcohol = alcohol;
-    }
-
-    public User(String firstName, String secondName, String phone, Double rating, String photo) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.phone = phone;
-        this.rating = rating;
-        this.photo = photo;
+        this.interests = interests;
+        this.places = places;
     }
 
     public Integer getId() {
@@ -139,5 +136,13 @@ public class User {
 
     public void setPlaces(List<Integer> places) {
         this.places = places;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }
