@@ -18,89 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/RecomendationTest.java">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#140#141#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Graph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#166#167#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#263#264#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-              <folding>
-                <element signature="e#194#195#0" expanded="true" />
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#279#280#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#432#450#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Edge.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-              <folding>
-                <element signature="e#184#185#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#285#286#0" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#415#416#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#685#686#0" expanded="true" />
-                <element signature="e#717#718#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/EdgeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -108,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,19 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -143,25 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src/main/java/com/Drinker/controller</dir>
-    </dirStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/../.." value="master" />
-      </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
@@ -170,12 +72,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/EdgeTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Edge.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Graph.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/RecomendationTest.java" />
       </list>
     </option>
   </component>
@@ -187,10 +84,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="129" />
+    <option name="y" value="25" />
     <option name="width" value="1920" />
-    <option name="height" value="1053" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,19 +94,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
@@ -247,40 +136,12 @@
               <item name="Drinker" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name="recomendation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Drinker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drinker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="recomendation" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,30 +149,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558110062450" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.Drinker.recomendation" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.Drinker.recomendation" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.Drinker.recomendation" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -325,71 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RecomendationTest.getSorted">
-    <configuration name="EdgeTest.addMeetingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Drinker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Drinker.recomendation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Drinker.recomendation" />
-      <option name="MAIN_CLASS_NAME" value="com.Drinker.recomendation.EdgeTest" />
-      <option name="METHOD_NAME" value="addMeetingTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecomendationTest.getSorted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Drinker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Drinker.recomendation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Drinker.recomendation" />
-      <option name="MAIN_CLASS_NAME" value="com.Drinker.recomendation.RecomendationTest" />
-      <option name="METHOD_NAME" value="getSorted" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecomendationTest.gettingRecomendationListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Drinker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Drinker.recomendation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Drinker.recomendation" />
-      <option name="MAIN_CLASS_NAME" value="com.Drinker.recomendation.RecomendationTest" />
-      <option name="METHOD_NAME" value="gettingRecomendationListTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecomendationTest.testAdding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Drinker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Drinker.recomendation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.Drinker.recomendation" />
-      <option name="MAIN_CLASS_NAME" value="com.Drinker.recomendation.RecomendationTest" />
-      <option name="METHOD_NAME" value="testAdding" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Drinker" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.Drinker.Application" />
@@ -397,14 +177,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.RecomendationTest.getSorted" />
-        <item itemvalue="JUnit.RecomendationTest.gettingRecomendationListTest" />
-        <item itemvalue="JUnit.RecomendationTest.testAdding" />
-        <item itemvalue="JUnit.EdgeTest.addMeetingTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -417,130 +189,37 @@
       <option name="presentableId" value="Default" />
       <updated>1558107075323</updated>
       <workItem from="1558107078776" duration="2340000" />
-      <workItem from="1558111103944" duration="17018000" />
     </task>
-    <task id="LOCAL-00001" summary="create test package for recomendation">
-      <created>1558111744192</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1558111744192</updated>
-    </task>
-    <task id="LOCAL-00002" summary="create class Graph">
-      <created>1558114050860</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1558114050860</updated>
-    </task>
-    <task id="LOCAL-00003" summary="create addEdge test">
-      <created>1558119378874</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1558119378874</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add finding firstStage neighbours">
-      <created>1558121224698</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1558121224698</updated>
-    </task>
-    <task id="LOCAL-00005" summary="create finding drinking companion">
-      <created>1558156690726</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1558156690726</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Exclude Recomendation kernel in individual class">
-      <created>1558157525536</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1558157525536</updated>
-    </task>
-    <task id="LOCAL-00007" summary="change ignore">
-      <created>1558157725781</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1558157725781</updated>
-    </task>
-    <task id="LOCAL-00008" summary="test sorting - ok">
-      <created>1558161230551</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1558161230551</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 11h 49m 31s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 12h 07m 14s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 12h 10m 48s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 12h 13m 54s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 12h 14m 15s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 12h 32m 35s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_getSorted - 2019.05.18 at 13h 21m 31s.xml">
-      <configuration name="RecomendationTest.getSorted" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_getSorted - 2019.05.18 at 13h 21m 44s.xml">
-      <configuration name="RecomendationTest.getSorted" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_gettingRecomendationListTest - 2019.05.18 at 13h 31m 41s.xml">
-      <configuration name="RecomendationTest.gettingRecomendationListTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RecomendationTest_getSorted - 2019.05.18 at 13h 32m 08s.xml">
-      <configuration name="RecomendationTest.getSorted" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19358000" />
+    <option name="totallyTimeSpent" value="2413000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="129" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Tail" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991276" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3391494" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -557,102 +236,40 @@
     <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
+    <option name="RECENT_FILTERS">
       <map>
-        <entry key="MAIN">
+        <entry key="Branch">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="create test package for recomendation" />
-    <MESSAGE value="create class Graph" />
-    <MESSAGE value="create addEdge test" />
-    <MESSAGE value="add finding firstStage neighbours" />
-    <MESSAGE value="create finding drinking companion" />
-    <MESSAGE value="Exclude Recomendation kernel in individual class" />
-    <MESSAGE value="change ignore" />
-    <MESSAGE value="test sorting - ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="test sorting - ok" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/Graph.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/EdgeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="29" column="63" selection-start-line="29" selection-start-column="63" selection-end-line="29" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/controller/ApiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -661,80 +278,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/RecomendationKernel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
-          <folding>
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#432#450#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/Drinker/recomendation/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#166#167#0" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/Drinker/recomendation/RecomendationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -758,19 +309,6 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Drinker</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -785,7 +323,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
