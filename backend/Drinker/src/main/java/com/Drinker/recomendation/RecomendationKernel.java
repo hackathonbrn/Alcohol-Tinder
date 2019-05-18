@@ -54,7 +54,7 @@ public class RecomendationKernel {
         return candidate;
     }
 
-    public List<Integer> getSortedRecomendations(int target) {
+    public List<HashMap<Integer, Integer>> getSortedRecomendations(int target) {
         HashMap<Integer, Integer> allRecomend = getRecomendation(target);
         List list = new ArrayList(allRecomend.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
