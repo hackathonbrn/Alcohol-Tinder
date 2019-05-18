@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
 
+/**
+ * класс, содержащий в себе методы для поиска юзеров, которые должны быть в предложке
+ */
 public class RecomendationKernel {
     private Graph graph;
 
@@ -103,17 +106,18 @@ public class RecomendationKernel {
 
     /**
      *
-     * @param concreteAlcoholList - список напитков юзера из последовательного обхода
-     * @param targetAlcohollist - список напитков юзера, совпадения для которого мы ищем
-     * @return
+     * @param concreteAlcoholList - целочисленный список, integer список напитков юзера из последовательного обхода
+     * @param targetAlcohollist - целочисленный список, список напитков юзера, совпадения для которого мы ищем
+     * @return - количество совпадений
      */
-    private int getCountOfMatches(List<Integer> concreteAlcoholList, List<Integer> targetAlcohollist) {
+    public int getCountOfMatches(List<Integer> concreteAlcoholList, List<Integer> targetAlcohollist) {
         int countOfMatches = 0;
-        for (int targetAlcolol: targetAlcohollist) {
-            for (int concreteAlcohol: concreteAlcoholList) {
-                if (targetAlcolol == concreteAlcohol) {
+        for (int i = 0; i < targetAlcohollist.size(); i++ ) {
+            for (int j = 0; j < concreteAlcoholList.size(); j++) {
+                if (targetAlcohollist.get(i) == concreteAlcoholList.get(j)) {
                     countOfMatches++;
-                    concreteAlcoholList.remove(concreteAlcohol);
+                    concreteAlcoholList.remove(j);
+                    j--;
                 }
             }
         }
