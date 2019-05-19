@@ -25,7 +25,6 @@ var session = require('express-session');
 var morgan = require('morgan');
 // set morgan to log info about our requests for development use.
 app.use(morgan('dev'));
-var User = require('./database/models/user');
 // initialize body-parser to parse incoming parameters requests to req.body
 app.use(bodyParser.urlencoded({extended: true}));
 // initialize express-session to allow us track the logged-in user across sessions.
