@@ -10,12 +10,12 @@ link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.
             img(src=photo)
             h3 #{name}, age
             p
-                b Предпочитает напитки: \n
+                b Предпочитает напитки:
                 -for (let i = 0; i < alcohol.length; i++)
-                    +list(alcohol[i])
-                b \n Интересы
+                    +list(alcohol[i].name)
+                b Интересы
                 -for (let i = 0; i < interests.length; i++)
-                    +list(interests[i])
+                    +list(interests[i].name)
 
 body
     .container

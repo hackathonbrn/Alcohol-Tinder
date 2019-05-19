@@ -140,7 +140,7 @@ app.get('/logout', (req, res) => {
 
 
 app.use('/index', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 app.use('/chat', chatRouter);
 
 // catch 404 and forward to error handler
