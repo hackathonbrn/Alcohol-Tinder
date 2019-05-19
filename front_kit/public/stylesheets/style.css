@@ -33,6 +33,8 @@ li {
   width: 300px;
 }
 
-.light{
-  background-color: #eee;
+.me {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 5px;
 }
