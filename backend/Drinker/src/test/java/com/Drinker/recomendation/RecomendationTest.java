@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class RecomendationTest {
     @Test
@@ -59,7 +60,11 @@ public class RecomendationTest {
         graph.addPare(4, 6); graph.addPare(6, 4);
         graph.addPare(4, 7); graph.addPare(7, 4);
         RecomendationKernel recomendationKernel = new RecomendationKernel(graph);
-        List<HashMap<Integer, Integer>> sortedRecomendation = recomendationKernel.getSortedRecomendations(1);
-        System.out.println(sortedRecomendation.toString());
+        List<Integer> sortedRecomendation = recomendationKernel.getSortedRecomendations(1);
+        List<Integer> actual = new ArrayList<>();
+        actual.add(6);
+        actual.add(5);
+        actual.add(7);
+        assertEquals(sortedRecomendation, actual);
     }
 }

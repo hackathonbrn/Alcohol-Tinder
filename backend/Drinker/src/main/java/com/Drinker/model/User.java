@@ -8,7 +8,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @Column(name = "firstname")
     private String firstName;
@@ -23,57 +23,54 @@ public class User {
 
     private String photo;
 
+    private Integer age;
+
     @ElementCollection
     @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "userid"))
     @Column(name = "alcoholid")
     private List<Integer> alcohol;
 
-//    @ElementCollection
-//    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
-//    @Column(name = "alcohointerestlid")
-//    private List<Integer> interests;
-//
-//    @ElementCollection
-//    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
-//    @Column(name = "placeid")
-//    private List<Integer> places;
+    @ElementCollection
+    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
+    @Column(name = "alcohointerestlid")
+    private List<Integer> interests;
+
+    @ElementCollection
+    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
+    @Column(name = "placeid")
+    private List<Integer> places;
 
     public User() {
     }
 
-//    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
-//        this.firstName = firstName;
-//        this.secondName = secondName;
-//        this.phone = phone;
-//        this.rating = rating;
-//        this.photo = photo;
-//        this.alcohol = alcohol;
-//        this.interests = interests;
-//        this.places = places;
-//    }
-
-    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
         this.rating = rating;
         this.photo = photo;
         this.alcohol = alcohol;
+        this.interests = interests;
+        this.places = places;
     }
 
-    public User(String firstName, String secondName, String phone, Double rating, String photo) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, Integer age, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
         this.rating = rating;
         this.photo = photo;
+        this.age = age;
+        this.alcohol = alcohol;
+        this.interests = interests;
+        this.places = places;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -125,19 +122,27 @@ public class User {
         this.alcohol = alcohol;
     }
 
-//    public List<Integer> getInterests() {
-//        return interests;
-//    }
-//
-//    public void setInterests(List<Integer> interests) {
-//        this.interests = interests;
-//    }
-//
-//    public List<Integer> getPlaces() {
-//        return places;
-//    }
-//
-//    public void setPlaces(List<Integer> places) {
-//        this.places = places;
-//    }
+    public List<Integer> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<Integer> interests) {
+        this.interests = interests;
+    }
+
+    public List<Integer> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<Integer> places) {
+        this.places = places;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
