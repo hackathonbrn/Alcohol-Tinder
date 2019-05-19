@@ -3,9 +3,9 @@
     <div class="match">
       <div
         class="circle-photo photo"
-        v-bind:style="{ 'background-image': 'url(' + user.photos[0] + ')' }"
+        v-bind:style="{ 'background-image': 'url(' + user.photo + ')' }"
       ></div>
-      <h1>{{ user.firstname }}</h1>
+      <h1>{{ user.firstName }}</h1>
     </div>
   </router-link>
 </template>

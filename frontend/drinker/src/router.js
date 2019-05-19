@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import Search from "./views/Search";
 import Matches from "./views/Matches";
 import Profile from "./views/Profile";
+import Chats from "./views/Chats";
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ export default new Router({
       path: "/matches",
       name: "matches",
       component: Home
+    },
+    {
+      path: "/chats/:id",
+      name: "chats",
+      component: Chats
     },
     {
       path: "/",

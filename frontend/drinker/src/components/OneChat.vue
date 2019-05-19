@@ -1,25 +1,15 @@
 <template>
-  <div style="width: 400px; height: 100vh">
-    <div
-      class="photo"
-      v-bind:style="{ 'background-image': 'url(' + user.photo + ')' }"
-    ></div>
-    <router-link :to="{ name: 'chats', params: { id: user.id } }">
-      <el-button type="info" icon="el-icon-message" circle></el-button
-    ></router-link>
-
-    <h1>{{ user.firstName }}, {{ user.age }}</h1>
+  <div class="one-chat" style="width: 400px; height: 100vh">
     <p>Люблю сидр и котиков</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "OneUser",
+  name: "OneChat",
   data() {
     return {
       user: {
-        id: 1,
         firstName: "Имя",
         secondName: "Фамилия",
         age: 19,
@@ -42,5 +32,9 @@ export default {
   height: 400px;
   background-color: #42b983;
   background-position: center;
+}
+.one-chat {
+  top: 0;
+  left: 400px;
 }
 </style>

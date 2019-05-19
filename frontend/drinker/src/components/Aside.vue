@@ -12,7 +12,7 @@
         </router-link>
         <div
           class="photo"
-          v-bind:style="{ 'background-image': 'url(' + user.photos[0] + ')' }"
+          v-bind:style="{ 'background-image': 'url(' + user.photo + ')' }"
         ></div>
         <h1>Мой профиль</h1>
       </div>
