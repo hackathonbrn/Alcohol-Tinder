@@ -89,7 +89,7 @@ function sendMsg() {
                 '                  <p>'+ msg.value+'</p>\n' +
                 // '                  <span class="time_date"> 11:01 AM    |    June 9</span></div>\n' +
                 '              </div>\n'
-        msg.clear()
+        msg.value=''
 
         console.log(xhr.response)
 

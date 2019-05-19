@@ -25,19 +25,20 @@ head
 
 .container
     +menu()
+    br
     input#user(value=user hidden=true)
-    .messaging
-        .inbox_msg
+    .messaging(style='border-radius: 5px;')
+        .inbox_msg(style='border-radius: 5px;')
             .inbox_people
                 .headind_srch
                     .recent_heading
-                        h4 Последние
-                    .srch_bar
-                        .stylish-input-group
-                            input.search-bar(type='text' placeholder='Поиск')
-                            span.input-group-addon
-                                button(type='button')
-                                    i.fa.fa-search(aria-hidden='true')
+                        h4 Последние чаты
+                    //.srch_bar
+                    //    .stylish-input-group
+                    //        input.search-bar(type='text' placeholder='Поиск')
+                    //        span.input-group-addon
+                    //            button(type='button')
+                    //                i.fa.fa-search(aria-hidden='true')
                 .inbox_chat
                     -for (let i = 0; i < groups.length; i++)
                         +docs(groups[i].id,groups[i].name)
@@ -69,7 +70,7 @@ head
                     //        span.time_date  11:01 AM    |    June 9
                 .type_msg
                     .input_msg_write
-                        input.write_msg#inputMsg(type='text' placeholder='Type a message')
+                        input.write_msg#inputMsg(type='text' placeholder='Введите сообщения')
                         button.msg_send_btn(type='button' onclick='sendMsg()')
                             i.fa.fa-paper-plane(aria-hidden='true')
 

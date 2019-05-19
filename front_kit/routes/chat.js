@@ -10,7 +10,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/',async function(req, res, next) {
     let groups = await chatkit.getUserRooms({
-        userId: 'kit',
+        userId: 'Vasya',
     })
       .catch((err) => {
         console.log(err);
@@ -20,7 +20,7 @@ router.get('/',async function(req, res, next) {
         title: 'Express' ,
         groups: groups,
         chatkit:chatkit,
-        user:'kit'
+        user:'Vasya'
     });
 });
 
@@ -42,7 +42,7 @@ router.get('/getMess',async function(req, res, next) {
 });
 router.get('/sendMess',async function(req, res, next) {
     let result = await chatkit.sendSimpleMessage({
-        userId: 'kit',
+        userId: 'Vasya',
         roomId: req.query.chat,
         text: req.query.msg,
     })

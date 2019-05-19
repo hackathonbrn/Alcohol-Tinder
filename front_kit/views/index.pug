@@ -7,8 +7,8 @@ link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.
         p #{name}
     mixin docs(id, name, photo, age, alcohol, interests, places)
         .tinder--card
-            img(src=photo)
-            h3 #{name}, age
+            img(src=photo style=' max-height: 300px;')
+            h3 #{name}, #{age}
             p
                 b Предпочитает напитки:
                 -for (let i = 0; i < alcohol.length; i++)
@@ -29,7 +29,7 @@ body
                 +docs(result[i].id,result[i].firstName, result[i].photo,
                     result[i].age,
                     result[i].alcohol,
-                    result[i].interests
+                    result[i].interest
                 )
             //.tinder--card
             //    img(src='https://github.com/lune-omena/images_hackfools/blob/master/Piccione/paolo3.jpg?raw=true')
@@ -45,9 +45,9 @@ body
             //        | As vezes vou viajar, me exercito... Existe algum outro curso em que voc&ecirc; j&aacute; viu isso antes?
             //        | Que tal uma aula de exerc&iacute;cios?
         .tinder--buttons
-            button#nope
+            button#nope(style="height: 60px;" onclick=)
                 i.fa.fa-times
-            button#love
+            button#love(style="height: 60px;")
                 i.fa.fa-wine-bottle
 script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
 script(src='https://hammerjs.github.io/dist/hammer.min.js')

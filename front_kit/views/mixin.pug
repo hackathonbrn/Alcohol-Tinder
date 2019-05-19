@@ -1,15 +1,21 @@
 mixin menu()
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    ul.nav.nav-pills.light.centred(style='font-size:19px;  color:#FFF;')
-        li
-            a(href='/user')
+    ul.nav.nav-pills.light.centred(style='font-size:19px;  color:#FFF; border-radius: 5px; ')
+        li(style='  background-color: #fff;\n' +
+        '  border-radius: 3px;\n' +
+        '  padding: 5px;')
+            a(href='/user' )
                 span.glyphicon.glyphicon-user.btn-lg
                 |  Профиль
-        li
-            a(href='/')
+        li(style='  background-color: #fff;\n' +
+        '  border-radius: 3px;\n' +
+        '  padding: 5px;')
+            a(href='/index')
                 span.glyphicon.glyphicon-search.btn-lg
                 |  Поиск
-        li
+        li(style='  background-color: #fff;\n' +
+        '  border-radius: 3px;\n' +
+        '  padding: 5px;')
             a(href='/chat')
                 span.glyphicon.glyphicon-comment.btn-lg
                 |  Пары
