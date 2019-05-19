@@ -11,7 +11,7 @@ public class Graph {
     }
 
     public void addPare(int vertex1, int vertex2) {
-        edgeList.add(new Edge(vertex1, vertex2));
+//        edgeList.add(new Edge(vertex1, vertex2));
     }
 
     public List<Edge> getEdgeList() {

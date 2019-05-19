@@ -1,58 +1,62 @@
 package com.Drinker.recomendation;
 
+import com.Drinker.model.User;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.*;
+
+@Entity
 public class Edge {
-    private int user1;
-    private int user2;
-    private int meetingCount;
-    private double rate;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userid1")
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    private User user1;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userid2")
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    private User user2;
+
+    private int meeting_count;
 
     public Edge() {
 
     }
 
-    public Edge(int id1, int id2) {
-        this.user1 = id1;
-        this.user2 = id2;
-        this.meetingCount = 0;
-        this.rate = 0;
+    public Edge(User user1, User user2) {
+        this.user1 = user1;
+        this.user2 = user2;
+        this.meeting_count = 0;
     }
 
-    public int getUser1() {
+    public User getUser1() {
         return user1;
     }
 
-    public void setUser1(int user1) {
+    public void setUser1(User user1) {
         this.user1 = user1;
     }
 
-    public int getUser2() {
+    public User getUser2() {
         return user2;
     }
 
-    public void setUser2(int user2) {
+    public void setUser2(User user2) {
         this.user2 = user2;
     }
 
     public int getMeetingCount() {
-        return meetingCount;
+        return meeting_count;
     }
 
     public void setMeetingCount(int meetingCount) {
-        this.meetingCount = meetingCount;
+        this.meeting_count = meetingCount;
     }
 
-    public double getRate() {
-        return rate;
-    }
-
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
-
-    public void addMeeting(double rate) {
-        double oldSum = this.rate * this.meetingCount;
-        double newSum = oldSum + rate;
-        this.meetingCount++;
-        this.rate = newSum / this.meetingCount;
-    }
 }
