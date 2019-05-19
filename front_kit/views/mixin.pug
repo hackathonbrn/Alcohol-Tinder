@@ -1,0 +1,15 @@
+mixin menu()
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    ul.nav.nav-pills.centred(style='font-size:19px;  color:#FFF;')
+        li
+            a(href='/user')
+                span.glyphicon.glyphicon-user.btn-lg
+                |  Профиль
+        li
+            a(href='/')
+                span.glyphicon.glyphicon-search.btn-lg
+                |  Поиск
+        li
+            a(href='/chat')
+                span.glyphicon.glyphicon-comment.btn-lg
+                |  Пары

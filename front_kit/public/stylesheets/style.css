@@ -1,8 +1,28 @@
 body {
-  padding: 50px;
+  padding: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body {
+  background-image: url(http://mymgn.info/timthumb/timthumb.php?src=http://mymgn.info/uploads/posts/2016-10/thumbs/1476880966_33.jpg&w=350&h=260);
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.tinder{
+  height: calc(100vh - 70px);
+}
+.menu{
+  align-content: center;
+}
+
+li {
+    width: 33%;
+  }
+
+.centred{
+  align-content: center;
 }

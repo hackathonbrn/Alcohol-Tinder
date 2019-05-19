@@ -4,18 +4,13 @@
     margin: 0;
 }
 
-body {
-    background-image: url(http://mymgn.info/timthumb/timthumb.php?src=http://mymgn.info/uploads/posts/2016-10/thumbs/1476880966_33.jpg&w=350&h=260);
-    overflow: hidden;
-    font-family: sans-serif;
-}
 .class1{
     text-decoration: line-through;
 }
 
 .tinder {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 70px);
     overflow: hidden;
     display: flex;
     flex-direction: column;
