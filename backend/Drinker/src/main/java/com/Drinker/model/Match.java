@@ -1,38 +1,44 @@
-package com.Drinker.recomendation;
+package com.Drinker.model;
 
-import com.Drinker.model.User;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
 @Entity
-public class Edge {
+public class Match {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "userid1")
+    @JoinColumn(name = "firstuserid")
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private User user1;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "userid2")
+    @JoinColumn(name = "seconduserid")
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private User user2;
 
-    private int meeting_count;
+    private boolean mutual;
 
-    public Edge() {
-
+    public Match() {
     }
 
-    public Edge(User user1, User user2) {
+    public Match(User user1, User user2, boolean mutual) {
         this.user1 = user1;
         this.user2 = user2;
-        this.meeting_count = 0;
+        this.mutual = mutual;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public User getUser1() {
@@ -51,12 +57,11 @@ public class Edge {
         this.user2 = user2;
     }
 
-    public int getMeetingCount() {
-        return meeting_count;
+    public boolean isMutual() {
+        return mutual;
     }
 
-    public void setMeetingCount(int meetingCount) {
-        this.meeting_count = meetingCount;
+    public void setMutual(boolean mutual) {
+        this.mutual = mutual;
     }
-
 }
