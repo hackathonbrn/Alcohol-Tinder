@@ -1,5 +1,6 @@
 package com.Drinker.recomendation;
 
+import com.Drinker.model.Alcohol;
 import com.Drinker.model.User;
 import com.Drinker.repository.AlcoholRepo;
 import com.Drinker.repository.UserRepo;
@@ -104,15 +105,19 @@ public class RecomendationKernel {
     public List<Integer> getRecomendationByDrink(User targetUser, List<User> allUsers) {
         HashMap<Integer, Integer> resultUnsort = new HashMap<>();
 //        User targetUser = userRepo.findById(target).get();
-        List<Integer> allUserAlcohol = targetUser.getAlcohol();
+//        List<Alcohol> allUserAlcohol = targetUser.getAlcohol();
+        List<Integer> allUserAlcoholIds = targetUser.getAlcoholListIds();
 //        Iterable<User> allUsers = userRepo.findAll();
         // начинаем обход всех юзеров
         for (User concreteUser: allUsers) {
             if (concreteUser.getId().equals(targetUser.getId())) {
                 continue;
             }
-            List<Integer> concreteAlcoholList = concreteUser.getAlcohol();
-            int countOfMatches = getCountOfMatches(concreteAlcoholList, allUserAlcohol);
+            List<Alcohol> concreteAlcoholList = concreteUser.getAlcohol();
+            List<Integer> concreteAlcoholListIds = concreteUser.getAlcoholListIds();
+
+
+            int countOfMatches = getCountOfMatches(concreteAlcoholListIds, allUserAlcoholIds);
             // сохраним в итоговую мапу
             resultUnsort.put(concreteUser.getId(), countOfMatches);
         }
