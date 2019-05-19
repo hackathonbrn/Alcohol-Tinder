@@ -1,10 +1,12 @@
 <template>
-    <div>kk</div>
+    <OneUser></OneUser>
 </template>
 
 <script>
+    import OneUser from "../components/OneUser";
     export default {
-        name: "Matches"
+        name: "Matches",
+        components: {OneUser}
     }
 </script>
 

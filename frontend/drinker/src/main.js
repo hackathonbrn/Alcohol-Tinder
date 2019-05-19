@@ -13,7 +13,10 @@ import 'swiper/dist/css/swiper.css'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.use(ElementUI);
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
+Vue.use(VueAxios, axios)
 Vue.config.productionTip = false;
 new Vue({
   router,

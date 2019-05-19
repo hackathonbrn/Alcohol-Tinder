@@ -1,10 +1,12 @@
 <template>
-    <h1>Профиль пользователя</h1>
+    <OneUser></OneUser>
 </template>
 
 <script>
+    import OneUser from "../components/OneUser";
     export default {
-        name: "Profile"
+        name: "Profile",
+        components: {OneUser}
     }
 </script>
 
