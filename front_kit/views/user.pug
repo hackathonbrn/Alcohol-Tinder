@@ -14,19 +14,16 @@ head
     +menu
     .card(style='width: 50%; margin: 5px 25%')
         center
-            img.card-img-top(src='images/1.png' alt='' style='')
+            img.card-img-top(src=user.photo alt='' style='')
         .card-body
-            h3.card-text Бзер оне
+            h3.card-text= user.firstName
             p(style='color: gray') Интересуюсь классической живописью и скульптурой, но с удовольствием обсужу и современное искусство
             p
-                b Возраст:
-                | 29
+                b= 'Возраст: ' + user.age
             p
-                b Предпочитаемые напитки:
-                |  Ром, Сидр
+                b='Напитки: '+ user.alcohol
             p
-                b Интересы:
-                | Музыка, Кино, Искусство, Субару
+                b= 'Интересы: '+ user.interests
             a(href='/user')
                 span.glyphicon.glyphicon-pencil.btn-lg
                 |  Редактировать

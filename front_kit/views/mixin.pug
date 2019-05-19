@@ -1,6 +1,6 @@
 mixin menu()
     link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    ul.nav.nav-pills.centred(style='font-size:19px;  color:#FFF;')
+    ul.nav.nav-pills.light.centred(style='font-size:19px;  color:#FFF;')
         li
             a(href='/user')
                 span.glyphicon.glyphicon-user.btn-lg
@@ -13,3 +13,14 @@ mixin menu()
             a(href='/chat')
                 span.glyphicon.glyphicon-comment.btn-lg
                 |  Пары
+
+mixin card(user)
+    .tinder--card
+        img(src=user.photo)
+        h3= user.firstName
+        p
+            b='Возраст: ' + user.age
+        p
+            b='Напитки: ' + user.alcohol
+        p
+            b= 'Интересы: ' + user.interests
