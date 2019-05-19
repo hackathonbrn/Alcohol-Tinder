@@ -51,8 +51,8 @@ public class RecomendationKernel {
     public ArrayList<Integer> getFirstStageNeighbour(int target) {
         ArrayList<Integer> result = new ArrayList<>();
         for (Edge edge: graph.getEdgeList()) {
-            if (edge.getUser1() == target) {
-                result.add(edge.getUser2());
+            if (edge.getUser1().getId() == target) {
+                result.add(edge.getUser2().getId());
             }
         }
         return result;
@@ -113,7 +113,7 @@ public class RecomendationKernel {
             if (concreteUser.getId().equals(targetUser.getId())) {
                 continue;
             }
-            List<Alcohol> concreteAlcoholList = concreteUser.getAlcohol();
+//            List<Alcohol> concreteAlcoholList = concreteUser.getAlcohol();
             List<Integer> concreteAlcoholListIds = concreteUser.getAlcoholListIds();
 
 
@@ -121,7 +121,8 @@ public class RecomendationKernel {
             // сохраним в итоговую мапу
             resultUnsort.put(concreteUser.getId(), countOfMatches);
         }
-        List<Integer> sortedListRecomendation = transformMapToList(resultUnsort);
+        HashMap<Integer, Integer> resultSort = sortingDownList(resultUnsort);
+        List<Integer> sortedListRecomendation = transformMapToList(resultSort);
         return sortedListRecomendation;
     }
 
