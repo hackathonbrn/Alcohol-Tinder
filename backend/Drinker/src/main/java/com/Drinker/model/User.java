@@ -1,6 +1,7 @@
 package com.Drinker.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,25 +26,49 @@ public class User {
 
     private Integer age;
 
-    @ElementCollection
-    @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "userid"))
-    @Column(name = "alcoholid")
-    private List<Integer> alcohol;
+//    @ElementCollection
+//    @CollectionTable(name = "useralcohol", joinColumns = @JoinColumn(name = "userid"))
+//    @Column(name = "alcoholid")
+//    private List<Integer> alcohol;
 
-    @ElementCollection
-    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
-    @Column(name = "alcohointerestlid")
-    private List<Integer> interests;
+//    @ElementCollection
+//    @CollectionTable(name = "userinterest", joinColumns = @JoinColumn(name = "userid"))
+//    @Column(name = "alcohointerestlid")
+//    private List<Integer> interests;
 
-    @ElementCollection
-    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
-    @Column(name = "placeid")
-    private List<Integer> places;
+//    @ElementCollection
+//    @CollectionTable(name = "userplace", joinColumns = @JoinColumn(name = "userid"))
+//    @Column(name = "placeid")
+//    private List<Integer> places;
+
+    @ManyToMany
+    @JoinTable(
+            name = "useralcohol",
+            joinColumns = @JoinColumn(name = "userid"),
+            inverseJoinColumns = @JoinColumn(name = "alcoholid")
+    )
+    private List<Alcohol> alcohol;
+
+    @ManyToMany
+    @JoinTable(
+            name = "userinterest",
+            joinColumns = @JoinColumn(name = "userid"),
+            inverseJoinColumns = @JoinColumn(name = "inerestid")
+    )
+    private List<Interest> interests;
+
+    @ManyToMany
+    @JoinTable(
+            name = "userplace",
+            joinColumns = @JoinColumn(name = "userid"),
+            inverseJoinColumns = @JoinColumn(name = "placeid")
+    )
+    private List<Place> places;
 
     public User() {
     }
 
-    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, List<Alcohol> alcohol, List<Interest> interests, List<Place> places) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
@@ -54,7 +79,7 @@ public class User {
         this.places = places;
     }
 
-    public User(String firstName, String secondName, String phone, Double rating, String photo, Integer age, List<Integer> alcohol, List<Integer> interests, List<Integer> places) {
+    public User(String firstName, String secondName, String phone, Double rating, String photo, Integer age, List<Alcohol> alcohol, List<Interest> interests, List<Place> places) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.phone = phone;
@@ -114,27 +139,27 @@ public class User {
         this.photo = photo;
     }
 
-    public List<Integer> getAlcohol() {
+    public List<Alcohol> getAlcohol() {
         return alcohol;
     }
 
-    public void setAlcohol(List<Integer> alcohol) {
+    public void setAlcohol(List<Alcohol> alcohol) {
         this.alcohol = alcohol;
     }
 
-    public List<Integer> getInterests() {
+    public List<Interest> getInterests() {
         return interests;
     }
 
-    public void setInterests(List<Integer> interests) {
+    public void setInterests(List<Interest> interests) {
         this.interests = interests;
     }
 
-    public List<Integer> getPlaces() {
+    public List<Place> getPlaces() {
         return places;
     }
 
-    public void setPlaces(List<Integer> places) {
+    public void setPlaces(List<Place> places) {
         this.places = places;
     }
 
@@ -144,5 +169,14 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public List<Integer> getAlcoholListIds() {
+        List<Integer> ids = new ArrayList<>();
+
+        for (Alcohol a: this.alcohol) {
+            ids.add(a.getId());
+        }
+        return ids;
     }
 }
