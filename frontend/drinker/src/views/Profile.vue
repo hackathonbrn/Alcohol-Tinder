@@ -5,7 +5,7 @@
 <script>
     import OneUser from "../components/OneUser";
     export default {
-        name: "Matches",
+        name: "Profile",
         components: {OneUser}
     }
 </script>

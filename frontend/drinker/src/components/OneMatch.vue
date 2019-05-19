@@ -1,8 +1,11 @@
 <template>
   <router-link :to="{ name: 'user', params: { id: user.id } }">
     <div class="match">
-      <div></div>
-      <h1>{{ user.firstname }}</h1>
+      <div
+        class="circle-photo photo"
+        v-bind:style="{ 'background-image': 'url(' + user.photo + ')' }"
+      ></div>
+      <h1>{{ user.firstName }}</h1>
     </div>
   </router-link>
 </template>
@@ -15,11 +18,31 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+h1 {
+  color: #20262e;
+  margin-left: 10px;
+}
 .match {
+  padding: 10px;
   height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo {
+  width: 50px;
+  height: 50px;
 }
 a.router-link-exact-active .match {
-  color: #42b983;
-  background-color: #b86841;
+  color: #fff;
+  background-color: #b88782;
+}
+
+a.router-link-exact-active .match h1{
+  color: #fff;
 }
 </style>

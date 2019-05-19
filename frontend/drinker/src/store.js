@@ -7,167 +7,31 @@ export default new Vuex.Store({
   state: {
     user: {
       id: 100,
-      firstname: "Николай",
+      firstname: "Василий",
       age: 25,
-      photos: [
-        "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-      ],
+      photo: "https://ulpressa.ru/wp-content/uploads/old/960_0_3_L7hokjsJFpE.jpg",
       matches: [
         {
           id: 101,
-          firstname: "Николай",
+          firstName: "Николай",
           age: 25,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
+          photo: "data:image/jpeg;base64,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",
         },
         {
           id: 102,
-          firstname: "Петр",
+          firstName: "Петр",
           age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
+          photo: "https://files.adme.ru/files/news/part_165/1658265/8882015-41015410-1-0-1514194714-1514194724-1500-1-1514194724-650-4561b7ccf5-1514279441.jpg",
         },
         {
           id: 103,
-          firstname: "Петр",
+          firstName: "Генадий",
           age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 104,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 105,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 106,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 107,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 108,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
-        },
-        {
-          id: 102,
-          firstname: "Петр",
-          age: 27,
-          photos: [
-            "https://images.unsplash.com/photo-1558068078-7a6b350aed4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-          ]
+          photo: "https://www.likeni.ru/upload/iblock/b4f/iiwoozjyfdzdyf.jpg",
         }
       ]
     },
     queue: [
-      {
-        id: 1,
-        firstname: "Иосиф",
-        age: 20,
-        photo:
-          "https://pp.userapi.com/c849320/v849320266/165685/wXs4GZAmLUE.jpg",
-        description: "Люблю сидр и котиков"
-      },
-      {
-        id: 2,
-        firstname: "Катя",
-        age: 22,
-        photo:
-          "https://pp.userapi.com/c848628/v848628728/d0c32/ZCaQ29kujSA.jpg",
-        description: "Люблю сидр и котиков"
-      },
-      {
-        id: 3,
-        firstname: "Андрей",
-        age: 24,
-        photo:
-          "https://pp.userapi.com/c623900/v623900438/118e59/OTQhAWwF_jM.jpg",
-        description: "Люблю сидр и котиков"
-      }
     ]
   },
   mutations: {},

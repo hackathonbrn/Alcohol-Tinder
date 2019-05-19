@@ -7,18 +7,18 @@
     <!--      <router-link to="/matches">Пары</router-link>-->
     <!--    </div>-->
     <!--    <router-view />-->
+
     <el-container>
       <el-aside class="aside" width="400px"><Aside></Aside></el-aside>
       <el-container id="el-container">
-        <el-header>Header</el-header>
-        <el-main class="main"><SwiperScreen /><wave></wave></el-main>
-        <el-footer>Footer</el-footer>
+        <router-view></router-view>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 html {
 }
 .aside {
@@ -28,7 +28,7 @@ html {
   border-style: solid;
   border: 1px;
 }
-el-container{
+el-container {
   background-color: #f6fafd;
 }
 .main {
@@ -41,10 +41,9 @@ el-container{
 }
 * {
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 #app {
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
@@ -61,10 +60,20 @@ el-container{
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.circle-photo {
+  border-radius: 50%;
+  border-radius: 50%;
+  background-position: center;
+  border: 2px;
+
+  border-color: #fff;
+  border-style: solid;
+}
 </style>
 <script>
 import Match from "./components/Match";
-import SwiperScreen from "./components/SwiperScreen";
+import SwiperScreen from "./components/Swipe";
 import Wave from "./components/Wave";
 import Aside from "./components/Aside";
 export default {
