@@ -1,9 +1,7 @@
 package com.Drinker.controller;
 
-import com.Drinker.model.Group;
-import com.Drinker.model.Match;
-import com.Drinker.model.Place;
-import com.Drinker.model.User;
+import com.Drinker.model.*;
+import com.Drinker.recomendation.RecomendationKernel;
 import com.Drinker.repository.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,12 +33,36 @@ public class ApiController {
     @Autowired
     private MatchRepo matchRepo;
 
+    @Autowired
+    private InterestRepo interestRepo;
+
+    /**
+     * Получение списка рекомендованных пользователей
+     * @param user - id пользователя, для которого составляется рекомендация
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getQueue")
-    public List<User> getQueue(@RequestBody Integer userId) {
-        return new ArrayList<>();
+    public List<User> getQueue(@RequestBody String user) {
+        RecomendationKernel recomendationKernel = new RecomendationKernel();
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+        User user1 = userRepo.findById(userId).get();
+        List<User> users = userRepo.findAll();
+        List<Integer> recomendationByDrink = recomendationKernel.getRecomendationByDrink(user1, users);
+
+        List<User> recommendedUsers = new ArrayList<>();
+        for (int i = 0; i < recomendationByDrink.size(); i++) {
+            User u = userRepo.findById(recomendationByDrink.get(i)).get();
+            recommendedUsers.add(u);
+        }
+        return recommendedUsers;
     }
 
+    /**
+     * Получение информации о пользователе
+     * @param id - id пользователя
+     * @return информация о пользователе
+     */
     @CrossOrigin(origins = "*")
     @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable("id") Integer id) {
@@ -54,16 +76,21 @@ public class ApiController {
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
         String phone = (String) jsonUser.get("phone");
+        Integer age = jsonUser.getInt("age");
         ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
         ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
         ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
 
-
-        User user = new User(firstName, secondName, phone, 5.0, "file", alco, interests, places);
+        User user = new User(firstName, secondName, phone, 5.0, "file", age, alco, interests, places);
         userRepo.save(user);
         return user;
     }
 
+    /**
+     * Создание группы
+     * @param newGroup - информация о создаваемой группе
+     * @return новая группа
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/createGroup")
     public Group createGroup(@RequestBody String newGroup) {
@@ -87,6 +114,10 @@ public class ApiController {
         return group;
     }
 
+    /**
+     * Добавление пользователей в группу
+     * @param groupAndUsers - id группы и id пользователей
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/addToGroup")
     public void addUserToGroup(@RequestBody String groupAndUsers) {
@@ -107,6 +138,11 @@ public class ApiController {
         groupRepo.save(group);
     }
 
+    /**
+     * Обновление информации о пользователе
+     * @param newInfoUser - новая информация о пользователе
+     * @return обновленного пользователя
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/updateUser")
     public User updateUser(@RequestBody String newInfoUser) {
@@ -114,6 +150,7 @@ public class ApiController {
         Integer userId = jsonUser.getInt("id");
         String firstName = (String) jsonUser.get("firstName");
         String secondName = (String) jsonUser.get("secondName");
+        Integer age = jsonUser.getInt("age");
         String phone = (String) jsonUser.get("phone");
         ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
         ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
@@ -127,11 +164,16 @@ public class ApiController {
         user.setAlcohol(alco);
         user.setInterests(interests);
         user.setPlaces(places);
+        user.setAge(age);
 
         userRepo.save(user);
         return user;
     }
 
+    /**
+     * Просталение лайка, проверка на совпадение пользователей
+     * @param userPair - пара пользователей, между которыми образовалась связь
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/like")
     public void checkMatch(@RequestBody String userPair) {
@@ -164,5 +206,107 @@ public class ApiController {
     public void addPhotoToUser() {
     }
 
+    /**
+     * Возращает список алкогольных напитков
+     * @return список алкогольных напитков
+     */
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getAlcoList")
+    public List<Alcohol> getAllAlcohol() {
+        return alcoholRepo.findAll();
+    }
 
+    /**
+     * Получение всех совпадений для конкретного пользователя
+     * @param user - пользователь
+     * @return все совпадения
+     */
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserMatches")
+    public List<User> getUserMatches(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+        List<Match> user1 = matchRepo.findByUser1AndMutualIsTrue(currentUser);
+        List<Match> user2 = matchRepo.findByUser2AndMutualIsTrue(currentUser);
+        List<User> result = new ArrayList<>();
+
+        for (int i = 0; i < user1.size(); i++)
+            result.add(user1.get(i).getUser2());
+
+        for (int i = 0; i < user2.size(); i++)
+            result.add(user2.get(i).getUser1());
+
+        return result;
+    }
+
+    /**
+     * Получение информации об алкогольных напитках, которые предпочитает пользователь
+     * @param user - пользователь
+     * @return алкогольные напитки пользователя
+     */
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserAlcoList")
+    public List<Alcohol> getUserAlco(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userAlcohol = currentUser.getAlcohol();
+        List<Alcohol> result = new ArrayList<>();
+
+        for (int i = 0; i < userAlcohol.size(); i++) {
+            result.add(alcoholRepo.findById(userAlcohol.get(i)).get());
+        }
+
+        return result;
+    }
+
+    /**
+     * Получение информации об интересах пользователя
+     * @param user - пользователь
+     * @return список интересов пользователя
+     */
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserInterestList")
+    public List<Interest> getUserInterest(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userInterest = currentUser.getInterests();
+        List<Interest> result = new ArrayList<>();
+
+        for (int i = 0; i < userInterest.size(); i++)
+            result.add(interestRepo.findById(userInterest.get(i)).get());
+
+
+        return result;
+    }
+
+    /**
+     * Получение информации о местах, которые любит посещать пользователь
+     * @param user - пользователь
+     * @return список мест пользователя
+     */
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserPlaceList")
+    public List<Place> getUserPlaces(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userPlaces = currentUser.getPlaces();
+        List<Place> result = new ArrayList<>();
+
+        for (int i = 0; i < userPlaces.size(); i++)
+            result.add(placeRepo.findById(userPlaces.get(i)).get());
+
+
+        return result;
+    }
 }
