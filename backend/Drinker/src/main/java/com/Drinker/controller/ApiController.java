@@ -1,9 +1,6 @@
 package com.Drinker.controller;
 
-import com.Drinker.model.Group;
-import com.Drinker.model.Match;
-import com.Drinker.model.Place;
-import com.Drinker.model.User;
+import com.Drinker.model.*;
 import com.Drinker.recomendation.RecomendationKernel;
 import com.Drinker.repository.*;
 import org.json.JSONArray;
@@ -36,6 +33,8 @@ public class ApiController {
     @Autowired
     private MatchRepo matchRepo;
 
+    @Autowired
+    private InterestRepo interestRepo;
 
     @CrossOrigin(origins = "*")
     @PostMapping("/getQueue")
@@ -73,8 +72,7 @@ public class ApiController {
         ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
         ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
 
-
-        User user = new User(firstName, secondName, phone, 5.0, "file", alco, interests, places);
+        User user = new User(firstName, secondName, phone, 5.0, "file", age, alco, interests, places);
         userRepo.save(user);
         return user;
     }
@@ -143,6 +141,7 @@ public class ApiController {
         user.setAlcohol(alco);
         user.setInterests(interests);
         user.setPlaces(places);
+        user.setAge(age);
 
         userRepo.save(user);
         return user;
@@ -180,5 +179,83 @@ public class ApiController {
     public void addPhotoToUser() {
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getAlcoList")
+    public List<Alcohol> getAllAlcohol() {
+        return alcoholRepo.findAll();
+    }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserMatches")
+    public List<User> getUserMatches(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+        List<Match> user1 = matchRepo.findByUser1AndMutualIsTrue(currentUser);
+        List<Match> user2 = matchRepo.findByUser2AndMutualIsTrue(currentUser);
+        List<User> result = new ArrayList<>();
+
+        for (int i = 0; i < user1.size(); i++)
+            result.add(user1.get(i).getUser2());
+
+        for (int i = 0; i < user2.size(); i++)
+            result.add(user2.get(i).getUser1());
+
+        return result;
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserAlcoList")
+    public List<Alcohol> getUserAlco(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userAlcohol = currentUser.getAlcohol();
+        List<Alcohol> result = new ArrayList<>();
+
+        for (int i = 0; i < userAlcohol.size(); i++) {
+            result.add(alcoholRepo.findById(userAlcohol.get(i)).get());
+        }
+
+        return result;
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserInterestList")
+    public List<Interest> getUserInterest(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userInterest = currentUser.getInterests();
+        List<Interest> result = new ArrayList<>();
+
+        for (int i = 0; i < userInterest.size(); i++)
+            result.add(interestRepo.findById(userInterest.get(i)).get());
+
+
+        return result;
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getUserPlaceList")
+    public List<Place> getUserPlaces(@RequestBody String user) {
+        JSONObject jsonUser = new JSONObject(user);
+        Integer userId = jsonUser.getInt("id");
+
+        User currentUser = userRepo.findById(userId).get();
+
+        List<Integer> userPlaces = currentUser.getPlaces();
+        List<Place> result = new ArrayList<>();
+
+        for (int i = 0; i < userPlaces.size(); i++)
+            result.add(placeRepo.findById(userPlaces.get(i)).get());
+
+
+        return result;
+    }
 }
