@@ -36,6 +36,10 @@ public class ApiController {
     @Autowired
     private InterestRepo interestRepo;
 
+    /**
+     * Получение списка рекомендованных пользователей
+     * @param user - id пользователя, для которого составляется рекомендация
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getQueue")
     public List<User> getQueue(@RequestBody String user) {
@@ -54,6 +58,11 @@ public class ApiController {
         return recommendedUsers;
     }
 
+    /**
+     * Получение информации о пользователе
+     * @param id - id пользователя
+     * @return информация о пользователе
+     */
     @CrossOrigin(origins = "*")
     @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable("id") Integer id) {
@@ -77,6 +86,11 @@ public class ApiController {
         return user;
     }
 
+    /**
+     * Создание группы
+     * @param newGroup - информация о создаваемой группе
+     * @return новая группа
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/createGroup")
     public Group createGroup(@RequestBody String newGroup) {
@@ -100,6 +114,10 @@ public class ApiController {
         return group;
     }
 
+    /**
+     * Добавление пользователей в группу
+     * @param groupAndUsers - id группы и id пользователей
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/addToGroup")
     public void addUserToGroup(@RequestBody String groupAndUsers) {
@@ -120,6 +138,11 @@ public class ApiController {
         groupRepo.save(group);
     }
 
+    /**
+     * Обновление информации о пользователе
+     * @param newInfoUser - новая информация о пользователе
+     * @return обновленного пользователя
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/updateUser")
     public User updateUser(@RequestBody String newInfoUser) {
@@ -147,6 +170,10 @@ public class ApiController {
         return user;
     }
 
+    /**
+     * Просталение лайка, проверка на совпадение пользователей
+     * @param userPair - пара пользователей, между которыми образовалась связь
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/like")
     public void checkMatch(@RequestBody String userPair) {
@@ -179,12 +206,21 @@ public class ApiController {
     public void addPhotoToUser() {
     }
 
+    /**
+     * Возращает список алкогольных напитков
+     * @return список алкогольных напитков
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getAlcoList")
     public List<Alcohol> getAllAlcohol() {
         return alcoholRepo.findAll();
     }
 
+    /**
+     * Получение всех совпадений для конкретного пользователя
+     * @param user - пользователь
+     * @return все совпадения
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getUserMatches")
     public List<User> getUserMatches(@RequestBody String user) {
@@ -205,6 +241,11 @@ public class ApiController {
         return result;
     }
 
+    /**
+     * Получение информации об алкогольных напитках, которые предпочитает пользователь
+     * @param user - пользователь
+     * @return алкогольные напитки пользователя
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getUserAlcoList")
     public List<Alcohol> getUserAlco(@RequestBody String user) {
@@ -223,6 +264,11 @@ public class ApiController {
         return result;
     }
 
+    /**
+     * Получение информации об интересах пользователя
+     * @param user - пользователь
+     * @return список интересов пользователя
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getUserInterestList")
     public List<Interest> getUserInterest(@RequestBody String user) {
@@ -241,6 +287,11 @@ public class ApiController {
         return result;
     }
 
+    /**
+     * Получение информации о местах, которые любит посещать пользователь
+     * @param user - пользователь
+     * @return список мест пользователя
+     */
     @CrossOrigin(origins = "*")
     @PostMapping("/getUserPlaceList")
     public List<Place> getUserPlaces(@RequestBody String user) {
