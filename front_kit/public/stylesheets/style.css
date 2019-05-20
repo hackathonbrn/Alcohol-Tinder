@@ -1,0 +1,40 @@
+body {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body {
+  background-image: url('../images/bg1.jpg');
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.tinder{
+  height: calc(100vh - 70px);
+}
+.menu{
+  align-content: center;
+}
+
+li {
+    width: 33%;
+  }
+
+.centred{
+  align-content: center;
+}
+
+.card-img-top{
+  /*padding: 0px 50px 0px 50px;*/
+  height: 300px;
+  width: 300px;
+}
+
+.me {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 5px;
+}

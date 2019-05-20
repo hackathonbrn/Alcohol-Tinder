@@ -1,10 +1,5 @@
 package com.Drinker.controller;
 
-import com.Drinker.model.*;
-import com.Drinker.recomendation.RecomendationKernel;
-import com.Drinker.repository.*;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +19,7 @@ public class ApiController {
     @Autowired
     private UserRepo userRepo;
 
+
     @Autowired
     private PlaceRepo placeRepo;
 
@@ -41,6 +37,7 @@ public class ApiController {
      * @param user id пользователя, для которого составляется рекомендация
      */
     @CrossOrigin(origins = "*")
+
     @PostMapping("/getQueue")
     public List<User> getQueue(@RequestBody String user) {
         RecomendationKernel recomendationKernel = new RecomendationKernel();
