@@ -1,5 +1,6 @@
 package com.Drinker.recomendation;
 
+import com.Drinker.model.Alcohol;
 import com.Drinker.model.User;
 import com.Drinker.repository.AlcoholRepo;
 import com.Drinker.repository.UserRepo;
@@ -50,8 +51,8 @@ public class RecomendationKernel {
     public ArrayList<Integer> getFirstStageNeighbour(int target) {
         ArrayList<Integer> result = new ArrayList<>();
         for (Edge edge: graph.getEdgeList()) {
-            if (edge.getUser1() == target) {
-                result.add(edge.getUser2());
+            if (edge.getUser1().getId() == target) {
+                result.add(edge.getUser2().getId());
             }
         }
         return result;
@@ -104,19 +105,24 @@ public class RecomendationKernel {
     public List<Integer> getRecomendationByDrink(User targetUser, List<User> allUsers) {
         HashMap<Integer, Integer> resultUnsort = new HashMap<>();
 //        User targetUser = userRepo.findById(target).get();
-        List<Integer> allUserAlcohol = targetUser.getAlcohol();
+//        List<Alcohol> allUserAlcohol = targetUser.getAlcohol();
+        List<Integer> allUserAlcoholIds = targetUser.getAlcoholListIds();
 //        Iterable<User> allUsers = userRepo.findAll();
         // начинаем обход всех юзеров
         for (User concreteUser: allUsers) {
             if (concreteUser.getId().equals(targetUser.getId())) {
                 continue;
             }
-            List<Integer> concreteAlcoholList = concreteUser.getAlcohol();
-            int countOfMatches = getCountOfMatches(concreteAlcoholList, allUserAlcohol);
+//            List<Alcohol> concreteAlcoholList = concreteUser.getAlcohol();
+            List<Integer> concreteAlcoholListIds = concreteUser.getAlcoholListIds();
+
+
+            int countOfMatches = getCountOfMatches(concreteAlcoholListIds, allUserAlcoholIds);
             // сохраним в итоговую мапу
             resultUnsort.put(concreteUser.getId(), countOfMatches);
         }
-        List<Integer> sortedListRecomendation = transformMapToList(resultUnsort);
+        HashMap<Integer, Integer> resultSort = sortingDownList(resultUnsort);
+        List<Integer> sortedListRecomendation = transformMapToList(resultSort);
         return sortedListRecomendation;
     }
 

@@ -34,7 +34,7 @@ public class ApiController {
 
     /**
      * Получение списка рекомендованных пользователей
-     * @param user - id пользователя, для которого составляется рекомендация
+     * @param user id пользователя, для которого составляется рекомендация
      */
     @CrossOrigin(origins = "*")
 
@@ -50,6 +50,15 @@ public class ApiController {
         List<User> recommendedUsers = new ArrayList<>();
         for (int i = 0; i < recomendationByDrink.size(); i++) {
             User u = userRepo.findById(recomendationByDrink.get(i)).get();
+//            //---------КОСТЫЛЬ--------
+//            //ids
+//            List<Integer> a = u.getAlcohol();
+//
+//            for (int j = 0; j < a.size(); j++)
+//                u.addAlco(alcoholRepo.findById(a.get(j)).get());
+//
+//            //----КОСТЫЛЬ ЗАКОНЧИЛСЯ----
+
             recommendedUsers.add(u);
         }
         return recommendedUsers;
@@ -57,7 +66,7 @@ public class ApiController {
 
     /**
      * Получение информации о пользователе
-     * @param id - id пользователя
+     * @param id id пользователя
      * @return информация о пользователе
      */
     @CrossOrigin(origins = "*")
@@ -74,9 +83,9 @@ public class ApiController {
         String secondName = (String) jsonUser.get("secondName");
         String phone = (String) jsonUser.get("phone");
         Integer age = jsonUser.getInt("age");
-        ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
-        ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
-        ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
+        ArrayList<Alcohol> alco = (ArrayList<Alcohol>) jsonUser.get("alco");
+        ArrayList<Interest> interests = (ArrayList<Interest>) jsonUser.get("interest");
+        ArrayList<Place> places = (ArrayList<Place>) jsonUser.get("place");
 
         User user = new User(firstName, secondName, phone, 5.0, "file", age, alco, interests, places);
         userRepo.save(user);
@@ -85,7 +94,7 @@ public class ApiController {
 
     /**
      * Создание группы
-     * @param newGroup - информация о создаваемой группе
+     * @param newGroup информация о создаваемой группе
      * @return новая группа
      */
     @CrossOrigin(origins = "*")
@@ -113,7 +122,7 @@ public class ApiController {
 
     /**
      * Добавление пользователей в группу
-     * @param groupAndUsers - id группы и id пользователей
+     * @param groupAndUsers id группы и id пользователей
      */
     @CrossOrigin(origins = "*")
     @PostMapping("/addToGroup")
@@ -137,7 +146,7 @@ public class ApiController {
 
     /**
      * Обновление информации о пользователе
-     * @param newInfoUser - новая информация о пользователе
+     * @param newInfoUser новая информация о пользователе
      * @return обновленного пользователя
      */
     @CrossOrigin(origins = "*")
@@ -149,9 +158,9 @@ public class ApiController {
         String secondName = (String) jsonUser.get("secondName");
         Integer age = jsonUser.getInt("age");
         String phone = (String) jsonUser.get("phone");
-        ArrayList<Integer> alco = (ArrayList<Integer>) jsonUser.get("alco");
-        ArrayList<Integer> interests = (ArrayList<Integer>) jsonUser.get("interest");
-        ArrayList<Integer> places = (ArrayList<Integer>) jsonUser.get("place");
+        ArrayList<Alcohol> alco = (ArrayList<Alcohol>) jsonUser.get("alco");
+        ArrayList<Interest> interests = (ArrayList<Interest>) jsonUser.get("interest");
+        ArrayList<Place> places = (ArrayList<Place>) jsonUser.get("place");
 
 
         User user = userRepo.findById(userId).get();
@@ -169,7 +178,7 @@ public class ApiController {
 
     /**
      * Просталение лайка, проверка на совпадение пользователей
-     * @param userPair - пара пользователей, между которыми образовалась связь
+     * @param userPair пара пользователей, между которыми образовалась связь
      */
     @CrossOrigin(origins = "*")
     @PostMapping("/like")
@@ -215,7 +224,7 @@ public class ApiController {
 
     /**
      * Получение всех совпадений для конкретного пользователя
-     * @param user - пользователь
+     * @param user пользователь
      * @return все совпадения
      */
     @CrossOrigin(origins = "*")
@@ -240,7 +249,7 @@ public class ApiController {
 
     /**
      * Получение информации об алкогольных напитках, которые предпочитает пользователь
-     * @param user - пользователь
+     * @param user пользователь
      * @return алкогольные напитки пользователя
      */
     @CrossOrigin(origins = "*")
@@ -251,19 +260,21 @@ public class ApiController {
 
         User currentUser = userRepo.findById(userId).get();
 
-        List<Integer> userAlcohol = currentUser.getAlcohol();
-        List<Alcohol> result = new ArrayList<>();
+//        List<Integer> userAlcohol = currentUser.getAlcohol();
+//        List<Alcohol> result = new ArrayList<>();
+//
+//        for (int i = 0; i < userAlcohol.size(); i++) {
+//            result.add(alcoholRepo.findById(userAlcohol.get(i)).get());
+//        }
+//
+//        return result;
 
-        for (int i = 0; i < userAlcohol.size(); i++) {
-            result.add(alcoholRepo.findById(userAlcohol.get(i)).get());
-        }
-
-        return result;
+        return currentUser.getAlcohol();
     }
 
     /**
      * Получение информации об интересах пользователя
-     * @param user - пользователь
+     * @param user пользователь
      * @return список интересов пользователя
      */
     @CrossOrigin(origins = "*")
@@ -274,19 +285,21 @@ public class ApiController {
 
         User currentUser = userRepo.findById(userId).get();
 
-        List<Integer> userInterest = currentUser.getInterests();
-        List<Interest> result = new ArrayList<>();
+//        List<Integer> userInterest = currentUser.getInterests();
+//        List<Interest> result = new ArrayList<>();
+//
+//        for (int i = 0; i < userInterest.size(); i++)
+//            result.add(interestRepo.findById(userInterest.get(i)).get());
+//
+//
+//        return result;
 
-        for (int i = 0; i < userInterest.size(); i++)
-            result.add(interestRepo.findById(userInterest.get(i)).get());
-
-
-        return result;
+        return currentUser.getInterests();
     }
 
     /**
      * Получение информации о местах, которые любит посещать пользователь
-     * @param user - пользователь
+     * @param user пользователь
      * @return список мест пользователя
      */
     @CrossOrigin(origins = "*")
@@ -297,13 +310,22 @@ public class ApiController {
 
         User currentUser = userRepo.findById(userId).get();
 
-        List<Integer> userPlaces = currentUser.getPlaces();
-        List<Place> result = new ArrayList<>();
+//        List<Integer> userPlaces = currentUser.getPlaces();
+//        List<Place> result = new ArrayList<>();
+//
+//        for (int i = 0; i < userPlaces.size(); i++)
+//            result.add(placeRepo.findById(userPlaces.get(i)).get());
+//
+//
+//        return result;
 
-        for (int i = 0; i < userPlaces.size(); i++)
-            result.add(placeRepo.findById(userPlaces.get(i)).get());
-
-
-        return result;
+        return currentUser.getPlaces();
     }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/getInterestList")
+    public List<Interest> getAllInterest() {
+        return interestRepo.findAll();
+    }
+
 }

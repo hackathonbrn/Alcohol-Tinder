@@ -1,6 +1,7 @@
 package com.Drinker.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "interest", schema = "public")
@@ -10,6 +11,9 @@ public class Interest {
     private Integer id;
 
     private String name;
+
+    @ManyToMany(mappedBy = "interests")
+    List<User> users;
 
     public Interest() {
     }
